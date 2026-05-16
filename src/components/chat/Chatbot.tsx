@@ -13,6 +13,7 @@ type Message = {
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
   const [flowStep, setFlowStep] = useState(0);
   const [leadData, setLeadData] = useState({ name: "", email: "", business: "" });
   const [messages, setMessages] = useState<Message[]>([
@@ -30,7 +31,7 @@ export default function Chatbot() {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [messages]);
+  }, [messages, isTyping]);
 
   const handleSend = (text: string) => {
     if (!text.trim()) return;
@@ -38,6 +39,7 @@ export default function Chatbot() {
     const userMsg: Message = { id: Date.now().toString(), type: "user", text };
     setMessages((prev) => [...prev, userMsg]);
     setInputValue("");
+    setIsTyping(true);
 
     // Qualification Flow Logic
     setTimeout(() => {
@@ -70,7 +72,8 @@ export default function Chatbot() {
       }
 
       setMessages((prev) => [...prev, botResponse]);
-    }, 1000);
+      setIsTyping(false);
+    }, 1500);
   };
 
   return (
@@ -149,6 +152,23 @@ export default function Chatbot() {
                   )}
                 </motion.div>
               ))}
+              {isTyping && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex flex-col items-start"
+                >
+                  <div className="flex items-center gap-2 mb-2 opacity-20">
+                    <Sparkles className="w-3 h-3" />
+                    <span className="text-[9px] uppercase font-black tracking-[0.2em]">System Protocol</span>
+                  </div>
+                  <div className="glass-dark border border-white/10 px-6 py-4 rounded-[28px] rounded-tl-none flex gap-1">
+                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1 }} className="w-1.5 h-1.5 bg-brand-electric rounded-full" />
+                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }} className="w-1.5 h-1.5 bg-brand-electric rounded-full" />
+                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }} className="w-1.5 h-1.5 bg-brand-electric rounded-full" />
+                  </div>
+                </motion.div>
+              )}
             </div>
 
             {/* Input Overlay for Booking CTA */}
@@ -233,6 +253,22 @@ export default function Chatbot() {
           )}
         </AnimatePresence>
       </motion.button>
+
+      {/* Proactive Welcome Bubble */}
+      {!isOpen && (
+        <motion.div
+          initial={{ opacity: 0, x: 20, scale: 0.8 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ delay: 3 }}
+          className="absolute bottom-24 right-0 w-64 glass-dark p-5 rounded-[24px] border border-white/10 shadow-strong-glow hidden sm:block pointer-events-none"
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-2 h-2 rounded-full bg-brand-electric animate-pulse" />
+            <span className="text-[9px] font-black uppercase tracking-widest text-brand-electric">System Ready</span>
+          </div>
+          <p className="text-xs font-description italic text-white/60">"Architecting a new system? Let's run a diagnostic."</p>
+        </motion.div>
+      )}
     </div>
   );
 }

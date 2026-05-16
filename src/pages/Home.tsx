@@ -6,16 +6,27 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[95vh] flex items-center pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-32 pb-20 px-4 overflow-hidden">
         {/* Cinematic Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[150px] animate-pulse opacity-50" />
+          <div className="absolute inset-0 grid-background grid-moving opacity-40" />
+          <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[150px] animate-pulse-glow opacity-50" />
           <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-electric/5 rounded-full blur-[120px] opacity-30" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]" />
-          <div className="absolute inset-0 hero-gradient opacity-40" />
+          <div className="absolute inset-0 hero-gradient opacity-60" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(0,112,243,0.1),transparent_40%)]" />
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+        <div 
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+            e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+          }}
+          className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center mouse-glow"
+        >
           <motion.div
             initial="hidden"
             animate="visible"
@@ -26,8 +37,25 @@ export default function Home() {
                 transition: { staggerChildren: 0.1, delayChildren: 0.2 }
               }
             }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left relative"
           >
+            {/* Background Particles */}
+            <div className="absolute -inset-20 pointer-events-none overflow-hidden opacity-20">
+               {[...Array(15)].map((_, i) => (
+                 <motion.div
+                   key={i}
+                   animate={{ 
+                     x: [Math.random() * 400, Math.random() * 400], 
+                     y: [Math.random() * 400, Math.random() * 400],
+                     opacity: [0.1, 0.3, 0.1]
+                   }}
+                   transition={{ repeat: Infinity, duration: 10 + Math.random() * 10, ease: "linear" }}
+                   className="absolute w-1 h-1 bg-brand-electric rounded-full blur-[1px]"
+                   style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+                 />
+               ))}
+            </div>
+
             <motion.div 
               variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass border border-white/10 mb-8 mx-auto lg:mx-0 shadow-glow group cursor-default"
@@ -62,16 +90,18 @@ export default function Home() {
             >
               <Link
                 to="/contact"
-                className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-strong-glow hover:scale-110 transition-all flex items-center justify-center gap-3 group"
+                className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-strong-glow hover:scale-110 transition-all flex items-center justify-center gap-3 group relative overflow-hidden"
               >
-                Claim Free AI Audit
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-brand-electric/10 translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                <span className="relative z-10">Claim Free AI Audit</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
               </Link>
               <Link
                 to="/demo"
-                className="px-10 py-5 glass border border-white/10 hover:border-brand-blue/50 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all text-center hover:bg-white/5"
+                className="px-10 py-5 glass border border-white/10 hover:border-brand-blue/50 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all text-center hover:bg-white/5 flex items-center justify-center gap-3 group"
               >
                 Inquire System Specs
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-electric animate-pulse group-hover:scale-150 transition-transform" />
               </Link>
             </motion.div>
             
@@ -226,17 +256,28 @@ export default function Home() {
             ].map((feature, i) => (
               <motion.div
                 key={i}
-                whileHover={{ y: -10, borderColor: "rgba(0, 112, 243, 0.4)" }}
-                className="group p-8 glass-dark rounded-[40px] border border-white/5 transition-all"
+                whileHover={{ 
+                  y: -15, 
+                  scale: 1.02,
+                  borderColor: "rgba(0, 210, 255, 0.4)",
+                  boxShadow: "0 20px 40px rgba(0, 112, 243, 0.1)"
+                }}
+                className="group p-8 glass-dark rounded-[44px] border border-white/5 transition-all duration-500 relative overflow-hidden"
               >
-                <div className="w-14 h-14 rounded-2xl bg-brand-blue/20 flex items-center justify-center mb-6 shadow-glow group-hover:bg-brand-blue transition-all duration-500">
-                  <feature.icon className="text-brand-electric w-7 h-7 group-hover:text-white transition-all shadow-glow" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="w-16 h-16 rounded-[24px] bg-brand-blue/10 flex items-center justify-center mb-8 shadow-glow group-hover:bg-brand-blue group-hover:shadow-strong-glow transition-all duration-700 group-hover:rotate-6">
+                  <feature.icon className="text-brand-electric w-8 h-8 group-hover:text-white transition-all duration-500" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-4 tracking-tight uppercase italic">{feature.title}</h3>
-                <p className="text-sm sm:text-base text-white/40 leading-relaxed italic font-description">{feature.desc}</p>
-                <Link to="/services" className="inline-flex items-center gap-2 mt-8 text-xs font-black uppercase tracking-widest text-brand-electric hover:gap-4 transition-all">
-                  Deep Dive <ChevronRight className="w-4 h-4" />
+                <h3 className="text-2xl font-bold mb-4 tracking-tighter uppercase italic group-hover:text-brand-electric transition-colors">{feature.title}</h3>
+                <p className="text-base text-white/40 leading-relaxed italic font-description group-hover:text-white/60 transition-colors uppercase tracking-tight text-xs">{feature.desc}</p>
+                <Link to="/demo" className="inline-flex items-center gap-2 mt-10 text-[10px] font-black uppercase tracking-[0.3em] text-brand-electric hover:gap-5 transition-all group/link">
+                  Launch Simulation <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
+                
+                {/* Decorative Element */}
+                <div className="absolute bottom-4 right-8 opacity-5 group-hover:opacity-20 transition-opacity">
+                   <feature.icon className="w-24 h-24" />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -378,30 +419,36 @@ export default function Home() {
             className="flex gap-8 whitespace-nowrap"
            >
               {[
-                { name: "Marcus Thorne", role: "CEO, Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days." },
-                { name: "Sarah Jenkins", role: "Founder, Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires." },
-                { name: "David Chen", role: "Ops Director, Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless." },
-                { name: "Elena Rodriguez", role: "Growth Lead, Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot." }
+                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe },
+                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap },
+                { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu },
+                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe }
               ].concat([
-                { name: "Marcus Thorne", role: "CEO, Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days." },
-                { name: "Sarah Jenkins", role: "Founder, Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires." },
-                { name: "David Chen", role: "Ops Director, Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless." },
-                { name: "Elena Rodriguez", role: "Growth Lead, Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot." }
+                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe },
+                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap },
+                { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu },
+                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe }
               ]).map((t, i) => (
                 <div key={i} className="w-[350px] sm:w-[450px] flex-shrink-0 glass-dark p-10 rounded-[44px] border border-white/5 hover:border-white/20 transition-all group/card relative overflow-hidden">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity" />
-                   <div className="flex items-center gap-4 mb-8">
-                      <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-white/10 flex items-center justify-center font-bold text-xl text-brand-electric italic">
-                         {t.name[0]}
+                   <div className="flex items-center justify-between mb-8">
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-white/10 flex items-center justify-center font-bold text-xl text-brand-electric italic">
+                           {t.name[0]}
+                        </div>
+                        <div>
+                           <div className="text-lg font-bold tracking-tight text-white/90 uppercase italic">{t.name}</div>
+                           <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric italic">{t.role}</div>
+                        </div>
                       </div>
-                      <div>
-                         <div className="text-lg font-bold tracking-tight text-white/90 uppercase italic">{t.name}</div>
-                         <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric italic">{t.role}</div>
+                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                         <t.logo className="w-5 h-5 text-white/20 group-hover/card:text-brand-electric transition-colors" />
                       </div>
                    </div>
-                   <p className="text-base sm:text-lg text-white/50 leading-relaxed font-description italic whitespace-normal group-hover/card:text-white/80 transition-colors">
+                   <p className="text-base sm:text-lg text-white/50 leading-relaxed font-description italic whitespace-normal group-hover/card:text-white/80 transition-colors mb-4">
                      "{t.quote}"
                    </p>
+                   <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20 group-hover/card:text-white/40 mb-8">{t.company}</div>
                    <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between opacity-30 group-hover/card:opacity-100 transition-opacity">
                       <div className="flex gap-1 text-brand-electric">
                          {[1,2,3,4,5].map(star => <Sparkles key={star} className="w-3 h-3 fill-current" />)}

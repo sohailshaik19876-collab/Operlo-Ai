@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Chatbot from "./components/chat/Chatbot";
+import CustomCursor from "./components/ui/CustomCursor";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Industries from "./pages/Industries";
@@ -30,7 +31,8 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col relative">
+      <div className="min-h-screen flex flex-col relative text-white">
+        <CustomCursor />
         <Navbar />
         <main className="flex-grow">
           <Routes>
