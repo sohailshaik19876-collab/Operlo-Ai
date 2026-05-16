@@ -39,43 +39,51 @@ export default function Navbar() {
     >
       <div
         className={cn(
-          "max-w-7xl mx-auto rounded-2xl transition-all duration-500 px-4 md:px-8 py-3 flex items-center justify-between relative z-50",
-          isScrolled ? "glass-dark shadow-strong-glow border border-white/5" : "bg-transparent"
+          "max-w-7xl mx-auto rounded-3xl transition-all duration-700 px-6 sm:px-10 py-5 flex items-center justify-between relative z-50 overflow-hidden",
+          isScrolled ? "glass-dark shadow-strong-glow border border-white/10 translate-y-2 scale-[0.98]" : "bg-transparent"
         )}
       >
-        <Link to="/" className="flex items-center gap-3 group relative z-50">
-          <div className="w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center shadow-glow group-hover:shadow-strong-glow transition-all duration-500 transform group-hover:scale-110">
-            <Rocket className="text-white w-6 h-6" />
-          </div>
-          <span className="text-xl sm:text-2xl font-display font-black tracking-tighter text-white uppercase italic">
-            OPERLO<span className="text-brand-electric">AI</span>
+        <Link to="/" className="flex items-center gap-4 group relative z-50">
+          <motion.div 
+            whileHover={{ rotate: 180 }}
+            className="w-12 h-12 bg-white text-brand-blue rounded-[18px] flex items-center justify-center shadow-strong-glow group-hover:bg-brand-electric group-hover:text-white transition-all duration-700 transform"
+          >
+            <Rocket className="w-7 h-7" />
+          </motion.div>
+          <span className="text-2xl sm:text-3xl font-display font-black tracking-tighter text-white uppercase italic">
+            OPERLO<span className="text-brand-electric group-hover:text-white transition-colors duration-500">AI</span>
           </span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className={cn(
-                "text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 hover:text-brand-electric relative group",
-                location.pathname === link.href ? "text-brand-electric" : "text-white/60"
-              )}
-            >
-              {link.name}
-              <span className={cn(
-                "absolute -bottom-1 left-0 h-0.5 bg-brand-electric transition-all duration-300",
-                location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
-              )} />
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center gap-12">
+          <nav className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={cn(
+                  "text-[11px] font-black uppercase tracking-[0.3em] transition-all duration-500 hover:text-brand-electric relative group py-2",
+                  location.pathname === link.href ? "text-brand-electric" : "text-white/40 hover:text-white"
+                )}
+              >
+                {link.name}
+                <span className={cn(
+                  "absolute -bottom-1 left-0 h-[2px] bg-brand-electric transition-all duration-700 rounded-full",
+                  location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
+                )} />
+              </Link>
+            ))}
+          </nav>
+          
+          <div className="h-8 w-[1px] bg-white/10 mx-2" />
+
           <Link
             to="/contact"
-            className="group px-6 py-3 bg-brand-blue rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-105 transition-all shadow-glow hover:shadow-strong-glow"
+            className="group px-8 py-3.5 bg-brand-blue/10 border border-brand-blue/30 text-brand-electric rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-brand-blue hover:text-white transition-all shadow-glow hover:shadow-strong-glow active:scale-95"
           >
-            Audit Call
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Engine Diagnostic
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
