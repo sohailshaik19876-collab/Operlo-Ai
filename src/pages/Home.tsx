@@ -68,12 +68,19 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              variants={{ hidden: { opacity: 0, y: 30, filter: "blur(10px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)" } }}
+              transition={{ duration: 1, ease: "easeOut" }}
               className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase italic"
             >
               Scale Your <br className="hidden sm:block" />
-              <span className="text-white text-stroke-white text-transparent">
+              <span className="text-white relative inline-block">
                 Performance.
+                <motion.div 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  transition={{ delay: 1, duration: 1 }}
+                  className="absolute bottom-4 left-0 h-2 bg-brand-electric/50 -rotate-1 -z-10" 
+                />
               </span>
             </motion.h1>
 
@@ -126,21 +133,26 @@ export default function Home() {
             transition={{ duration: 1.2, delay: 0.4, ease: "circOut" }}
             className="hidden lg:block relative perspective-2000 translate-x-12"
           >
-            <div className="relative group p-4">
+            <div className="relative group p-4 orbit-container">
               <div className="absolute -inset-10 bg-gradient-to-r from-brand-blue/20 via-brand-electric/10 to-brand-blue/20 rounded-full blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-1000 animate-pulse"></div>
               
               {/* Dynamic Floating Nodes */}
+              <div className="orbit-node" style={{ animationDelay: '-2s', offsetPath: 'ellipse(350px 200px at 50% 50%)' }} />
+              <div className="orbit-node" style={{ animationDelay: '-5s', offsetPath: 'ellipse(250px 150px at 50% 50%)' }} />
+              
               <div className="absolute -top-10 -left-10 z-20">
                  <motion.div 
-                  animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 4 }}
-                  className="glass-dark p-6 rounded-3xl border border-white/10 shadow-strong-glow backdrop-blur-3xl"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8 }}
+                  whileHover={{ scale: 1.1, rotateZ: -2 }}
+                  className="glass-dark p-6 rounded-3xl border border-white/10 shadow-strong-glow backdrop-blur-3xl cursor-pointer"
                  >
                     <div className="flex items-center gap-4">
-                       <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center shadow-glow"><Phone className="w-5 h-5" /></div>
+                       <div className="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center shadow-glow animate-pulse"><Phone className="w-6 h-6" /></div>
                        <div>
-                          <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric">Voice Outbound</div>
-                          <div className="text-sm font-bold">Active Stream</div>
+                          <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric animate-pulse">Voice Outbound</div>
+                          <div className="text-sm font-bold">99.2% Connectivity</div>
                        </div>
                     </div>
                  </motion.div>
@@ -148,61 +160,76 @@ export default function Home() {
 
               <div className="absolute -bottom-2 -right-6 z-20">
                  <motion.div 
-                  animate={{ y: [0, 10, 0], rotate: [0, -5, 0] }}
-                  transition={{ repeat: Infinity, duration: 5 }}
-                  className="glass-dark p-5 rounded-3xl border border-white/10 shadow-strong-glow backdrop-blur-3xl"
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1 }}
+                  whileHover={{ scale: 1.1, rotateZ: 2 }}
+                  className="glass-dark p-5 rounded-3xl border border-white/10 shadow-strong-glow backdrop-blur-3xl cursor-pointer"
                  >
                     <div className="flex items-center gap-3">
-                       <div className="w-10 h-10 rounded-xl bg-brand-electric flex items-center justify-center shadow-glow text-luxury-black"><Zap className="w-5 h-5" /></div>
+                       <div className="w-12 h-12 rounded-xl bg-brand-electric flex items-center justify-center shadow-glow text-luxury-black"><Zap className="w-6 h-6" /></div>
                        <div>
                           <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric">Lead Sync</div>
-                          <div className="text-xs font-bold">12ms Latency</div>
+                          <div className="text-xs font-bold">Instant Validation</div>
                        </div>
                     </div>
                  </motion.div>
               </div>
 
-              <div className="relative glass-dark rounded-[50px] p-2 border border-white/10 shadow-2xl overflow-hidden aspect-[4/4]">
-                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-                 <div className="relative w-full h-full bg-luxury-black/60 rounded-[48px] p-8 flex flex-col justify-between">
+              <div className="relative glass-dark rounded-[60px] p-1 border border-white/10 shadow-2xl overflow-hidden aspect-square h-[500px]">
+                 <div className="absolute inset-0 animate-scan pointer-events-none opacity-10 bg-gradient-to-b from-brand-electric to-transparent h-1" />
+                 <div className="relative w-full h-full bg-luxury-black/60 rounded-[58px] p-10 flex flex-col justify-between">
                     <div className="flex justify-between items-start">
                        <div className="space-y-4">
-                          <div className="h-6 w-40 bg-white/10 rounded-full animate-pulse" />
-                          <div className="h-4 w-64 bg-white/5 rounded-full" />
+                          <div className="h-4 w-32 bg-white/10 rounded-full" />
+                          <div className="h-2 w-48 bg-white/5 rounded-full" />
+                          <div className="flex gap-2">
+                             {[...Array(5)].map((_, i) => (
+                               <motion.div 
+                                 key={i}
+                                 animate={{ opacity: [0.2, 0.8, 0.2] }}
+                                 transition={{ delay: i * 0.2, repeat: Infinity }}
+                                 className="w-8 h-1 bg-brand-blue rounded-full" 
+                               />
+                             ))}
+                          </div>
                        </div>
-                       <div className="w-16 h-16 rounded-2xl bg-brand-blue/20 border border-brand-blue/40 flex items-center justify-center text-brand-electric animate-pulse shadow-glow">
+                       <motion.div 
+                        whileHover={{ rotate: 180 }}
+                        className="w-16 h-16 rounded-2xl bg-brand-blue/20 border border-brand-blue/40 flex items-center justify-center text-brand-electric shadow-glow"
+                       >
                           <Cpu className="w-8 h-8" />
-                       </div>
+                       </motion.div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-6 my-6">
+                    <div className="grid grid-cols-2 gap-6">
                        {[
-                         { label: "Neural Load", val: "14%", color: "brand-blue" },
-                         { label: "Uptime Rate", val: "99.9%", color: "brand-electric" }
+                         { label: "AI Neural Load", val: "22%", color: "#00d2ff" },
+                         { label: "Workflow Logic", val: "OPTIMAL", color: "#0070f3" }
                        ].map((stat, i) => (
-                         <div key={i} className="p-5 glass rounded-[32px] border border-white/5 relative group cursor-default">
-                            <div className={`absolute top-4 right-4 w-2 h-2 rounded-full bg-${stat.color} shadow-glow`} />
+                         <div key={i} className="p-6 glass rounded-[36px] border border-white/5 relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-16 h-16 bg-white/5 blur-2xl group-hover:bg-brand-blue/10 transition-colors" />
                             <div className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">{stat.label}</div>
-                            <div className="text-2xl font-display font-black italic tracking-tighter">{stat.val}</div>
+                            <div className="text-2xl font-display font-black italic tracking-tighter text-white">{stat.val}</div>
                          </div>
                        ))}
                     </div>
 
-                    <div className="h-32 bg-white/5 rounded-3xl border border-white/10 p-6 flex items-end justify-between overflow-hidden relative">
-                       <div className="absolute top-4 left-6 text-[10px] font-black uppercase tracking-widest text-white/20">Operational Scaling</div>
-                       <div className="flex gap-1.5 items-end flex-grow max-w-[60%]">
-                         {[30, 55, 40, 80, 50, 90, 70, 85, 55].map((h, i) => (
+                    <div className="h-40 bg-white/2 backdrop-blur-md rounded-[40px] border border-white/10 p-8 flex items-end justify-between overflow-hidden relative group">
+                       <div className="absolute top-4 left-8 text-[10px] font-black uppercase tracking-widest text-white/20">Scalability Index</div>
+                       <div className="flex gap-2 items-end flex-grow max-w-[65%]">
+                         {[40, 70, 50, 90, 60, 100, 80, 95, 75, 110].map((h, i) => (
                            <motion.div 
                              key={i} 
-                             animate={{ height: [`${h}%`, `${h+10}%`, `${h}%`] }}
-                             transition={{ repeat: Infinity, duration: 1.5 + i * 0.1 }}
-                             className="flex-grow bg-brand-blue rounded-t-lg opacity-60 shadow-glow" 
+                             animate={{ height: [`${h}%`, `${Math.min(100, h+15)}%`, `${h}%`] }}
+                             transition={{ repeat: Infinity, duration: 2 + i * 0.1, ease: "easeInOut" }}
+                             className="flex-grow bg-gradient-to-t from-brand-blue to-brand-electric rounded-t-xl opacity-60 shadow-low-glow" 
                            />
                          ))}
                        </div>
-                       <div className="text-right pl-4 border-l border-white/10">
-                         <div className="text-3xl font-display font-black text-white italic tracking-tighter">+248%</div>
-                         <div className="text-[10px] uppercase font-bold text-brand-electric tracking-widest leading-none">Net Gain</div>
+                       <div className="text-right pl-6 border-l border-white/10">
+                         <div className="text-4xl font-display font-black text-brand-electric italic tracking-tighter leading-none mb-1">+412%</div>
+                         <div className="text-[10px] uppercase font-black text-white/40 tracking-[0.2em]">Efficiency</div>
                        </div>
                     </div>
                  </div>
@@ -331,28 +358,56 @@ export default function Home() {
                </div>
             </div>
 
-            <div className="relative">
-               <div className="absolute inset-0 bg-brand-blue/10 blur-[100px] rounded-full animate-pulse" />
-               <div className="relative aspect-square glass-dark rounded-[60px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent">
-                  <div className="w-full h-full glass-dark rounded-[58px] p-12 flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="relative group">
+               <div className="absolute inset-0 bg-brand-blue/10 blur-[100px] rounded-full animate-pulse group-hover:bg-brand-electric/10 transition-colors duration-1000" />
+               <div className="relative aspect-square glass-dark rounded-[60px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent shadow-2xl group-hover:border-brand-blue/40 transition-all duration-700">
+                  <div className="w-full h-full glass-dark rounded-[58px] p-8 sm:p-12 flex flex-col items-center justify-center relative overflow-hidden">
                      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
                      
-                     <div className="flex flex-col gap-12 relative z-10 w-full max-w-xs">
+                     {/* Floating Particles in UI */}
+                     <div className="absolute inset-0 pointer-events-none">
+                        {[...Array(8)].map((_, i) => (
+                          <motion.div 
+                            key={i}
+                            animate={{ 
+                              opacity: [0.1, 0.4, 0.1],
+                              scale: [1, 1.2, 1],
+                              y: [0, -40, 0]
+                            }}
+                            transition={{ repeat: Infinity, duration: 4 + i, delay: i * 0.5 }}
+                            className="absolute w-1 h-1 bg-brand-electric rounded-full blur-[1px]"
+                            style={{ left: `${15 + i * 10}%`, top: `${20 + i * 8}%` }}
+                          />
+                        ))}
+                     </div>
+
+                     <div className="flex flex-col gap-10 relative z-10 w-full max-w-xs">
                         <motion.div 
-                          animate={{ scale: [1, 1.05, 1] }}
-                          transition={{ repeat: Infinity, duration: 3 }}
-                          className="p-6 glass rounded-2xl border border-brand-blue/30 flex items-center justify-center gap-4 bg-brand-blue/5 shadow-glow"
+                          whileHover={{ scale: 1.05, rotateY: 5 }}
+                          className="p-6 glass rounded-2xl border border-brand-blue/30 flex items-center justify-center gap-4 bg-brand-blue/10 shadow-glow relative group/node"
                         >
+                           <div className="absolute -top-2 -right-2 px-2 py-0.5 bg-brand-electric text-luxury-black text-[8px] font-black rounded-lg opacity-0 group-hover/node:opacity-100 transition-opacity">SOURCE</div>
                            <Bot className="w-8 h-8 text-brand-electric" />
-                           <div className="h-3 w-32 bg-white/20 rounded-full" />
+                           <div className="h-3 w-32 bg-white/20 rounded-full overflow-hidden">
+                              <motion.div 
+                                animate={{ x: ["-100%", "100%"] }}
+                                transition={{ repeat: Infinity, duration: 2 }}
+                                className="w-1/2 h-full bg-white/40"
+                              />
+                           </div>
                         </motion.div>
 
-                        <div className="flex justify-center -my-6 h-20 relative">
-                           <div className="w-px h-full bg-gradient-to-b from-brand-blue to-brand-electric opacity-50" />
+                        <div className="flex justify-center -my-5 h-20 relative">
+                           <div className="w-px h-full bg-gradient-to-b from-brand-blue via-brand-electric to-brand-blue opacity-50" />
                            <motion.div 
                             animate={{ y: [0, 80] }}
                             transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
                             className="absolute top-0 w-2 h-2 rounded-full bg-brand-electric shadow-glow"
+                           />
+                           <motion.div 
+                            animate={{ y: [0, 80], opacity: [0, 1, 0] }}
+                            transition={{ repeat: Infinity, duration: 2.5, ease: "linear", delay: 0.5 }}
+                            className="absolute top-0 w-3 h-3 rounded-full bg-brand-blue blur-[2px]"
                            />
                         </div>
 
@@ -360,26 +415,148 @@ export default function Home() {
                           className="grid grid-cols-2 gap-4"
                         >
                            {[1, 2].map(i => (
-                             <div key={i} className="p-4 glass-dark rounded-xl border border-white/10 flex items-center justify-center">
-                                <Zap className="w-5 h-5 text-white/30" />
-                             </div>
+                             <motion.div 
+                               key={i} 
+                               whileHover={{ scale: 1.1, y: -5 }}
+                               className="p-5 glass-dark rounded-xl border border-white/10 flex items-center justify-center bg-white/5 relative group/logic"
+                             >
+                                <Zap className="w-5 h-5 text-brand-electric group-hover:scale-125 transition-transform" />
+                                <div className="absolute inset-0 bg-brand-blue/5 rounded-xl opacity-0 group-hover/logic:opacity-100 transition-opacity" />
+                             </motion.div>
                            ))}
                         </motion.div>
 
-                        <div className="flex justify-center -my-6 h-20 relative px-10">
-                           <div className="w-1/2 h-px bg-brand-blue absolute top-1/2 left-0 opacity-30" />
-                           <div className="w-1/2 h-px bg-brand-blue absolute top-1/2 right-0 opacity-30" />
-                           <div className="w-px h-full bg-gradient-to-b from-brand-blue to-brand-electric opacity-50" />
+                        <div className="flex justify-center -my-5 h-20 relative px-10">
+                           <div className="w-1/2 h-px bg-brand-blue absolute top-1/2 left-0 opacity-30 shadow-glow" />
+                           <div className="w-1/2 h-px bg-brand-blue absolute top-1/2 right-0 opacity-30 shadow-glow" />
+                           <div className="w-px h-full bg-gradient-to-b from-brand-blue via-brand-electric to-brand-blue opacity-50" />
                         </div>
 
                         <motion.div 
-                           animate={{ scale: [1, 1.1, 1], boxShadow: ["0 0 20px rgba(0, 112, 243, 0.2)", "0 0 40px rgba(0, 112, 243, 0.5)", "0 0 20px rgba(0, 112, 243, 0.2)"] }}
-                           transition={{ repeat: Infinity, duration: 2 }}
-                           className="p-4 bg-brand-blue rounded-2xl flex items-center justify-center gap-4 text-white shadow-strong-glow"
+                           animate={{ 
+                             scale: [1, 1.05, 1], 
+                             boxShadow: ["0 0 20px rgba(0, 112, 243, 0.2)", "0 0 50px rgba(0, 112, 243, 0.6)", "0 0 20px rgba(0, 112, 243, 0.2)"] 
+                           }}
+                           transition={{ repeat: Infinity, duration: 3 }}
+                           className="p-5 bg-brand-blue rounded-2xl flex items-center justify-center gap-4 text-white shadow-strong-glow border border-white/20 relative cursor-pointer group/final"
                         >
-                           <CheckCircle2 className="w-6 h-6" />
-                           <span className="text-[10px] font-black uppercase tracking-[0.2em]">Efficiency Maxed</span>
+                           <motion.div 
+                              animate={{ scale: [1, 1.3, 1] }}
+                              transition={{ repeat: Infinity, duration: 1.5 }}
+                              className="absolute -inset-2 bg-brand-electric/10 rounded-3xl blur-xl opacity-0 group-hover/final:opacity-100 transition-opacity" 
+                           />
+                           <CheckCircle2 className="w-7 h-7" />
+                           <span className="text-[10px] font-black uppercase tracking-[0.3em]">Neural Output Optimized</span>
                         </motion.div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Systems Visualization - NEW SECTION */}
+      <section className="py-24 px-4 relative overflow-hidden bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2 space-y-12">
+               <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+               >
+                  <div className="inline-block px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-8"> Interactive Blueprint </div>
+                  <h2 className="text-4xl sm:text-7xl font-display font-black tracking-tighter uppercase italic leading-[0.9] mb-8">
+                    Live Neural <br /> <span className="text-white/30">Orchestration.</span>
+                  </h2>
+                  <p className="text-lg text-white/50 font-description italic leading-relaxed max-w-xl">
+                    Visualize how our autonomous engines sync your entire frontend and backend operations in real-time. This is not a simulation—it's architecture.
+                  </p>
+               </motion.div>
+
+               <div className="grid sm:grid-cols-2 gap-6">
+                  {[
+                    { label: "CRM Pipeline Sync", status: "Active", delay: "4ms" },
+                    { label: "Voice Latency Engine", status: "Optimized", delay: "12ms" },
+                    { label: "Neural Lead Filter", status: "Active", delay: "0.8s" },
+                    { label: "WhatsApp Gateway", status: "Connected", delay: "Instant" }
+                  ].map((sys, i) => (
+                    <motion.div 
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="p-6 glass-dark rounded-3xl border border-white/5 flex flex-col gap-2 group cursor-default"
+                    >
+                       <div className="flex justify-between items-center">
+                          <span className="text-[10px] font-black uppercase tracking-widest text-white/30">{sys.label}</span>
+                          <span className="text-[8px] px-2 py-0.5 bg-brand-electric text-luxury-black font-black rounded-lg">{sys.status}</span>
+                       </div>
+                       <div className="flex items-center gap-2">
+                          <div className="h-1 flex-grow bg-white/5 rounded-full overflow-hidden">
+                             <motion.div 
+                               animate={{ x: ["-100%", "100%"] }}
+                               transition={{ repeat: Infinity, duration: 1.5, delay: i * 0.3 }}
+                               className="w-1/2 h-full bg-brand-blue shadow-glow"
+                             />
+                          </div>
+                          <span className="text-xs font-black text-brand-blue italic">{sys.delay}</span>
+                       </div>
+                    </motion.div>
+                  ))}
+               </div>
+            </div>
+
+            <div className="lg:w-1/2 relative bg-luxury-black rounded-[60px] border border-white/10 p-10 h-[500px] overflow-hidden group">
+               <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-transparent pointer-events-none" />
+               <div className="relative z-10 h-full flex flex-col justify-between">
+                  <div className="flex justify-between items-start mb-8">
+                     <div className="flex gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center font-display font-black italic shadow-glow">O.S</div>
+                        <div>
+                           <div className="text-sm font-bold uppercase tracking-tight italic">Operlo Dashboard</div>
+                           <div className="text-[9px] font-black uppercase tracking-[0.2em] text-white/30">Infrastructure Monitoring</div>
+                        </div>
+                     </div>
+                     <div className="flex gap-2">
+                        <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                        <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                        <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                     </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-6 mb-8">
+                     {[1, 2, 3].map(i => (
+                       <div key={i} className="aspect-video glass rounded-2xl border border-white/5 p-4 flex flex-col justify-end gap-2 overflow-hidden relative">
+                          <div className={`absolute inset-0 bg-brand-blue animate-pulse-glow opacity-[0.02]`} />
+                          <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                             <motion.div 
+                               animate={{ width: ["10%", "90%", "10%"] }}
+                               transition={{ repeat: Infinity, duration: 4, delay: i * 0.5 }}
+                               className="h-full bg-brand-electric"
+                             />
+                          </div>
+                          <div className="text-[8px] font-black uppercase tracking-widest text-white/20">Metric #0{i}</div>
+                       </div>
+                     ))}
+                  </div>
+
+                  <div className="flex-grow glass-dark rounded-3xl border border-white/5 p-8 flex items-center justify-center relative overflow-hidden">
+                     <div className="absolute inset-0 animate-shimmer opacity-10 pointer-events-none" />
+                     <div className="flex flex-col items-center gap-6 relative z-10">
+                        <motion.div 
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ repeat: Infinity, duration: 2 }}
+                          className="w-20 h-20 rounded-full border-2 border-brand-electric/30 flex items-center justify-center"
+                        >
+                           <Cpu className="w-10 h-10 text-brand-electric animate-pulse" />
+                        </motion.div>
+                        <div className="text-center">
+                           <div className="text-3xl font-display font-black italic tracking-tighter leading-none mb-2">99.99%</div>
+                           <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30">System Integrity</div>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -419,15 +596,15 @@ export default function Home() {
             className="flex gap-8 whitespace-nowrap"
            >
               {[
-                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe },
-                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap },
-                { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu },
-                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe }
+                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe, metrics: "2.4x Revenue" },
+                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap, metrics: "-85% Overhead" },
+                { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu, metrics: "100% Automated" },
+                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe, metrics: "12hr/day Saved" }
               ].concat([
-                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe },
-                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap },
-                { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu },
-                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe }
+                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe, metrics: "2.4x Revenue" },
+                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap, metrics: "-85% Overhead" },
+                { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu, metrics: "100% Automated" },
+                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe, metrics: "12hr/day Saved" }
               ]).map((t, i) => (
                 <div key={i} className="w-[350px] sm:w-[450px] flex-shrink-0 glass-dark p-10 rounded-[44px] border border-white/5 hover:border-white/20 transition-all group/card relative overflow-hidden">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity" />
@@ -441,19 +618,23 @@ export default function Home() {
                            <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric italic">{t.role}</div>
                         </div>
                       </div>
-                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
-                         <t.logo className="w-5 h-5 text-white/20 group-hover/card:text-brand-electric transition-colors" />
+                      <div className="text-right">
+                         <div className="text-xl font-display font-black text-brand-electric italic tracking-tighter leading-none">{t.metrics}</div>
+                         <div className="text-[8px] font-black uppercase text-white/20 tracking-widest uppercase">Outcome</div>
                       </div>
                    </div>
                    <p className="text-base sm:text-lg text-white/50 leading-relaxed font-description italic whitespace-normal group-hover/card:text-white/80 transition-colors mb-4">
                      "{t.quote}"
                    </p>
-                   <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20 group-hover/card:text-white/40 mb-8">{t.company}</div>
+                   <div className="flex justify-between items-end">
+                      <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20 group-hover/card:text-white/40">{t.company}</div>
+                      <t.logo className="w-10 h-10 text-white/5 group-hover/card:text-brand-electric/20 transition-colors" />
+                   </div>
                    <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between opacity-30 group-hover/card:opacity-100 transition-opacity">
                       <div className="flex gap-1 text-brand-electric">
                          {[1,2,3,4,5].map(star => <Sparkles key={star} className="w-3 h-3 fill-current" />)}
                       </div>
-                      <div className="text-[10px] font-black uppercase tracking-widest">Neural Verification</div>
+                      <div className="text-[10px] font-black uppercase tracking-widest">Neural Verification #0{i+1}</div>
                    </div>
                 </div>
               ))}

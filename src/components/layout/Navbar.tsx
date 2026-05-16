@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Rocket, ChevronRight, ArrowRight } from "lucide-react";
+import { Menu, X, Rocket, ChevronRight, ArrowRight, Bot } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "../../lib/utils";
 
@@ -33,37 +33,40 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-4",
-        isScrolled ? "py-2" : "py-4 md:py-6"
+        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-6",
+        isScrolled ? "py-4 md:py-4" : "py-8 md:py-10"
       )}
     >
       <div
         className={cn(
-          "max-w-7xl mx-auto rounded-3xl transition-all duration-700 px-6 sm:px-10 py-5 flex items-center justify-between relative z-50 overflow-hidden",
-          isScrolled ? "glass-dark shadow-strong-glow border border-white/10 translate-y-2 scale-[0.98]" : "bg-transparent"
+          "max-w-7xl mx-auto rounded-[40px] transition-all duration-700 px-8 py-5 flex items-center justify-between relative z-50 overflow-hidden",
+          isScrolled ? "glass-dark shadow-strong-glow border border-white/10 backdrop-blur-3xl" : "bg-transparent border-transparent"
         )}
       >
         <Link to="/" className="flex items-center gap-4 group relative z-50">
           <motion.div 
-            whileHover={{ rotate: 180 }}
-            className="w-12 h-12 bg-white text-brand-blue rounded-[18px] flex items-center justify-center shadow-strong-glow group-hover:bg-brand-electric group-hover:text-white transition-all duration-700 transform"
+            whileHover={{ rotate: 180, scale: 1.1 }}
+            className="w-11 h-11 bg-brand-blue text-white rounded-[16px] flex items-center justify-center shadow-strong-glow transition-all duration-700 transform"
           >
-            <Rocket className="w-7 h-7" />
+            <Bot className="w-6 h-6" />
           </motion.div>
-          <span className="text-2xl sm:text-3xl font-display font-black tracking-tighter text-white uppercase italic">
-            OPERLO<span className="text-brand-electric group-hover:text-white transition-colors duration-500">AI</span>
-          </span>
+          <div className="flex flex-col">
+            <span className="text-xl sm:text-2xl font-display font-black tracking-tighter text-white uppercase italic leading-[0.8]">
+              OPERLO<span className="text-brand-electric">.</span>
+            </span>
+            <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 group-hover:text-brand-electric transition-colors">Neural Systems</span>
+          </div>
         </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-12">
-          <nav className="flex items-center gap-8">
+          <nav className="flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 className={cn(
-                  "text-[11px] font-black uppercase tracking-[0.3em] transition-all duration-500 hover:text-brand-electric relative group py-2",
+                  "text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 relative group py-2",
                   location.pathname === link.href ? "text-brand-electric" : "text-white/40 hover:text-white"
                 )}
               >
@@ -80,46 +83,40 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="group px-8 py-3.5 bg-brand-blue/10 border border-brand-blue/30 text-brand-electric rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-brand-blue hover:text-white transition-all shadow-glow hover:shadow-strong-glow active:scale-95"
+            className="group px-8 py-3.5 bg-white text-brand-blue rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-3 hover:scale-105 transition-all shadow-glow hover:shadow-strong-glow active:scale-95"
           >
-            Engine Diagnostic
+            Book Strategy Call
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+          className="md:hidden relative z-50 w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-white/5 border border-white/10 group"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
         >
-          {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+          <div className={cn("w-6 h-0.5 bg-white transition-all transform origin-center", isOpen && "rotate-45 translate-y-2")} />
+          <div className={cn("w-6 h-0.5 bg-white transition-all transform origin-center", isOpen && "opacity-0 scale-0")} />
+          <div className={cn("w-6 h-0.5 bg-white transition-all transform origin-center", isOpen && "-rotate-45 -translate-y-2")} />
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-luxury-black/90 backdrop-blur-2xl z-40 lg:hidden"
-              onClick={() => setIsOpen(false)}
-            />
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-full max-w-sm bg-luxury-black/95 z-40 border-l border-white/5 p-8 flex flex-col pt-32 lg:hidden"
-            >
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden absolute top-full left-0 right-0 mx-6 mt-4 z-40 overflow-hidden"
+          >
+            <div className="glass-dark rounded-[40px] border border-white/10 p-10 flex flex-col gap-8 shadow-2xl backdrop-blur-3xl">
               <div className="flex flex-col gap-6">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
                   >
@@ -127,7 +124,7 @@ export default function Navbar() {
                       to={link.href}
                       className={cn(
                         "text-3xl font-display font-black uppercase tracking-tighter italic block py-2 transition-all",
-                        location.pathname === link.href ? "text-brand-electric pl-4 border-l-4 border-brand-electric" : "text-white/60 hover:text-white"
+                        location.pathname === link.href ? "text-brand-electric pl-6 border-l-4 border-brand-electric" : "text-white/60"
                       )}
                     >
                       {link.name}
@@ -136,27 +133,17 @@ export default function Navbar() {
                 ))}
               </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="mt-auto"
-              >
+              <div className="pt-8 border-t border-white/5 flex flex-col gap-4">
                 <Link
                   to="/contact"
-                  className="w-full py-5 bg-brand-blue rounded-2xl font-black text-lg uppercase tracking-widest flex items-center justify-center gap-3 shadow-strong-glow active:scale-95 transition-transform"
+                  className="w-full py-5 bg-brand-blue rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 shadow-strong-glow active:scale-95 transition-transform"
                 >
-                  Start The Audit
-                  <ArrowRight className="w-5 h-5" />
+                  Book Your Audit
+                  <ArrowRight className="w-5 h-5 text-brand-electric" />
                 </Link>
-                <div className="mt-8 flex justify-center gap-8 opacity-40">
-                   <span className="text-[10px] font-bold uppercase tracking-widest">Twitter</span>
-                   <span className="text-[10px] font-bold uppercase tracking-widest">LinkedIn</span>
-                   <span className="text-[10px] font-bold uppercase tracking-widest">YouTube</span>
-                </div>
-              </motion.div>
-            </motion.div>
-          </>
+              </div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </nav>

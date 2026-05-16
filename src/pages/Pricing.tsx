@@ -1,97 +1,134 @@
 import { motion } from "motion/react";
-import { Check, Shield, Zap, Rocket, Building2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Check, Shield, Zap, Rocket, Building2, ArrowRight, Star } from "lucide-react";
+import { cn } from "../lib/utils";
 
 export default function Pricing() {
   const plans = [
     {
-      name: "Starter",
+      name: "Starter Protocol",
       price: "$2,997",
-      desc: "Perfect for small teams looking to automate their first workflow.",
-      features: ["1 Custom AI Chatbot", "Core Workflow Integration", "Basic Lead Qualification", "Email Support", "Monthly Strategy Call"],
-      cta: "Get Started",
+      desc: "Perfect for high-growth teams deploying their first neural automation node.",
+      features: ["1 Custom AI Workflow", "Core CRM Integration", "Basic Lead Qualification", "Neural System Monitoring", "Monthly Implementation Review"],
+      cta: "Initialize Setup",
       highlight: false
     },
     {
-      name: "Growth",
+      name: "Growth Engine",
       price: "$5,497",
-      desc: "Comprehensive AI systems for businesses looking to scale aggressively.",
-      features: ["3 AI Chatbots + Voice Basic", "Full CRM & Tool Integration", "Adv. Lead Gen Systems", "Priority 24/7 Support", "Bi-Weekly Implementation Audit"],
-      cta: "Recommended",
+      desc: "Mission-critical AI infrastructure for businesses scaling to the next tier.",
+      features: ["Full Service Ecosystem", "Voice & Chat Integration", "Adv. Lead Gen Architectures", "Priority 24/7 Neural Support", "Bi-Weekly Strategy Audits", "Custom Logic Hookups"],
+      cta: "Scale Now",
       highlight: true
     },
     {
-      name: "Enterprise",
+      name: "Enterprise Core",
       price: "Custom",
-      desc: "Tailor-made neural architectures for large-scale operations.",
-      features: ["Unlimited AI Agents", "Custom Private LLM Training", "White-Glove Implementation", "Dedicated AI Architect", "Security & HIPAA Compliance"],
-      cta: "Inquire Now",
+      desc: "Bespoke neural architectures engineered for complex global operations.",
+      features: ["Unlimited Neural Agents", "Private LLM Training", "White-Glove Architecture", "Dedicated AI Director", "Custom Security Protocols", "Legacy Bridge Engineering"],
+      cta: "Request Briefing",
       highlight: false
     }
   ];
 
   return (
-    <div className="pt-24 sm:pt-28 pb-20 px-4 max-w-7xl mx-auto">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center max-w-3xl mx-auto mb-16"
-      >
-        <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-xs font-black uppercase tracking-widest mb-6"> Scalable Pricing </div>
-        <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 italic tracking-tighter">Invest In <br /> <span className="text-white/40">Efficiency.</span></h1>
-        <p className="text-xl text-white/50 leading-relaxed font-description">
-          No hourly bills. No hidden fees. Just high-performance systems built to generate massive ROI.
-        </p>
-      </motion.div>
+    <div className="pt-32 pb-20 px-6 relative overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-0 w-full h-[600px] bg-brand-blue/5 blur-[120px] rounded-full pointer-events-none opacity-20" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center max-w-4xl mx-auto mb-24"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-10"> 
+            <Zap className="w-3 h-3" />
+            ROI Engineered Pricing 
+          </div>
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
+            Invest In <br /> <span className="text-white/30">Infrastructure.</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-xl mx-auto">
+            Our systems don't cost money—they buy you back your time and scale your performance exponentially.
+          </p>
+        </motion.div>
 
-      <div className="grid lg:grid-cols-3 gap-8">
-        {plans.map((plan, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-            viewport={{ once: true }}
-            className={cn(
-              "rounded-[40px] p-8 sm:p-10 border transition-all flex flex-col h-full relative overflow-hidden",
-              plan.highlight ? "bg-brand-blue border-white/20 shadow-strong-glow lg:scale-105 z-10" : "glass-dark border-white/5 hover:border-white/10"
-            )}
-          >
-            {plan.highlight && (
-              <div className="absolute top-6 right-6 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest">
-                Most Popular
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+          {plans.map((plan, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className={cn(
+                "rounded-[48px] p-10 sm:p-12 border transition-all flex flex-col h-full relative overflow-hidden group",
+                plan.highlight ? "bg-brand-blue border-white/20 shadow-strong-glow lg:scale-105 z-10" : "glass-dark border-white/5 hover:border-brand-blue/20"
+              )}
+            >
+              {plan.highlight && (
+                <div className="absolute top-10 right-10 flex items-center gap-2 px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-white">
+                  <Star className="w-3 h-3 fill-white" />
+                  Most Performance
+                </div>
+              )}
+              
+              <div className="mb-12">
+                <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mb-4">{plan.name}</h3>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-5xl sm:text-6xl font-display font-black tracking-tighter italic text-white leading-none">{plan.price}</span>
+                  <span className={cn("text-xs font-black uppercase tracking-widest", plan.highlight ? "text-white/60" : "text-white/20")}>/setup</span>
+                </div>
               </div>
-            )}
-            <h3 className="text-2xl font-bold mb-2 italic tracking-tight uppercase">{plan.name}</h3>
-            <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-5xl font-display font-black tracking-tighter italic">{plan.price}</span>
-              <span className="text-white/40 text-sm font-bold">/setup</span>
-            </div>
-            <p className={cn("text-sm mb-12 font-description italic leading-relaxed", plan.highlight ? "text-white/80" : "text-white/50")}>
-              {plan.desc}
-            </p>
-            
-            <ul className="space-y-4 mb-16 flex-grow">
-              {plan.features.map((f, idx) => (
-                <li key={idx} className="flex items-center gap-3">
-                  <div className={cn("w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0", plan.highlight ? "bg-white/20" : "bg-brand-blue/20 shadow-glow")}>
-                    <Check className={cn("w-3 h-3", plan.highlight ? "text-white" : "text-brand-electric")} />
-                  </div>
-                  <span className="text-sm font-bold tracking-tight opacity-80">{f}</span>
-                </li>
-              ))}
-            </ul>
 
-            <button className={cn(
-              "w-full py-5 rounded-2xl font-black text-sm uppercase tracking-[0.2em] transition-all shadow-glow hover:shadow-strong-glow transform active:scale-95",
-              plan.highlight ? "bg-white text-brand-blue" : "bg-white/5 border border-white/10 hover:bg-white/10 text-white"
-            )}>
-              {plan.cta}
-            </button>
-          </motion.div>
-        ))}
+              <p className={cn("text-base mb-12 font-description italic leading-relaxed", plan.highlight ? "text-white/80" : "text-white/40")}>
+                {plan.desc}
+              </p>
+              
+              <div className="space-y-4 mb-20 flex-grow">
+                {plan.features.map((f, idx) => (
+                  <div key={idx} className="flex items-center gap-4">
+                    <div className={cn("w-6 h-6 rounded-xl flex items-center justify-center flex-shrink-0 animate-pulse", plan.highlight ? "bg-white/20" : "bg-brand-blue/20 shadow-glow")}>
+                      <Check className={cn("w-3 h-3", plan.highlight ? "text-white" : "text-brand-electric")} />
+                    </div>
+                    <span className="text-xs font-black uppercase tracking-widest text-white/70 italic">{f}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button className={cn(
+                "w-full py-6 rounded-2xl font-black text-xs uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-3 active:scale-95",
+                plan.highlight ? "bg-white text-brand-blue hover:scale-[1.02] shadow-2xl" : "bg-white/5 border border-white/10 hover:bg-brand-blue hover:text-white"
+              )}>
+                {plan.cta}
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Enterprise Bottom Banner */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 p-8 glass-dark rounded-[40px] border border-white/5 flex flex-col md:flex-row items-center justify-between gap-10"
+        >
+          <div className="flex items-center gap-6">
+            <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center">
+              <Building2 className="w-8 h-8 text-brand-electric" />
+            </div>
+            <div>
+              <h4 className="text-xl font-display font-black tracking-tighter uppercase italic text-white">Need a Multi-Entity Solution?</h4>
+              <p className="text-sm text-white/40 font-description italic">We engineer complex systems for agencies and holding companies.</p>
+            </div>
+          </div>
+          <Link to="/contact" className="px-10 py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all">
+            Inquire Strategic Partnership
+          </Link>
+        </motion.div>
       </div>
     </div>
   );
 }
-
-import { cn } from "../lib/utils";

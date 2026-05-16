@@ -9,6 +9,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Chatbot from "./components/chat/Chatbot";
 import CustomCursor from "./components/ui/CustomCursor";
+import SmoothScroll from "./components/layout/SmoothScroll";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Industries from "./pages/Industries";
@@ -31,25 +32,27 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col relative text-white">
-        <CustomCursor />
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/industries" element={<Industries />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/demo" element={<Demo />} />
-          </Routes>
-        </main>
-        <Footer />
-        <Chatbot />
-      </div>
+      <SmoothScroll>
+        <div className="min-h-screen flex flex-col relative text-white">
+          <CustomCursor />
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/demo" element={<Demo />} />
+            </Routes>
+          </main>
+          <Footer />
+          <Chatbot />
+        </div>
+      </SmoothScroll>
     </Router>
   );
 }

@@ -1,112 +1,210 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { Bot, Zap, BarChart3, Globe, ShieldCheck, Mail, Phone, Calendar, UserPlus, Layers } from "lucide-react";
+import { 
+  Bot, Zap, BarChart3, Globe, ShieldCheck, Mail, Phone, 
+  Calendar, UserPlus, Layers, ArrowRight, CheckCircle2, 
+  Sparkles, Cpu, MessageSquare, Monitor
+} from "lucide-react";
 
 const services = [
   {
-    icon: Bot,
-    title: "AI Chatbots",
-    desc: "Intelligent concierge systems for websites and WhatsApp that qualify leads, answer FAQs, and book appointments 24/7.",
-    features: ["Instant Lead Qualification", "Direct Appointment Booking", "CRM Deep Integration"]
-  },
-  {
+    id: "voice",
     icon: Phone,
-    title: "AI Voice Agents",
+    title: "AI Voice Associates",
     desc: "Neural voice assistants capable of handling phone conversations, answering inquiries, and qualifying prospects with human-grade tonality.",
-    features: ["Inbound/Outbound Handling", "Zero Response Latency", "Automated Lead Sieve"]
+    metrics: "24/7 Coverage • 0s Latency",
+    features: ["Inbound/Outbound Handling", "Human-Grade Tonality", "Direct CRM Call Log Sync", "Automated Appointment Setting", "Multi-language Support"],
+    mockup: {
+      title: "Voice Queue",
+      items: ["Incoming Call: Sarah T.", "Outgoing Sync: Lead #4521", "Analysis: Positive Intent"]
+    }
   },
   {
+    id: "workflows",
     icon: Zap,
-    title: "Workflow Automation",
+    title: "Backend Orchestration",
     desc: "End-to-end operational automation that deletes repetitive admin work and syncs mission-critical data across your entire stack.",
-    features: ["Multi-platform Data Sync", "Automated Notificaitons", "Operational Efficiency Engine"]
+    metrics: "12ms Sync • 100% Accuracy",
+    features: ["Cross-platform Data Sync", "Automated Document Flow", "Slack/Teams Operational Alerts", "Custom Logic Integrations", "Legacy System Bridging"],
+    mockup: {
+       title: "Logic Map",
+       items: ["If Lead > $10k → Notify CEO", "Sync HubSpot → GoHighLevel", "Generate Auto-Invoice"]
+    }
   },
   {
-    icon: BarChart3,
-    title: "CRM Automation",
+    id: "chatbots",
+    icon: MessageSquare,
+    title: "Neural Chat Systems",
+    desc: "Intelligent concierge systems for websites and WhatsApp that qualify leads, answer FAQs, and book appointments 24/7.",
+    metrics: "98% Resolution • Infinite Scale",
+    features: ["Lead Qualification Flows", "Natural Language FAQ Handling", "WhatsApp Business Deep Integration", "Visual Product Recommendations", "Live Handover Protocols"],
+    mockup: {
+       title: "Live Concierge",
+       items: ["User: How do I scale?", "AI: Analyzing Systems...", "AI: Deploying Neural Node."]
+    }
+  },
+  {
+    id: "crm",
+    icon: Monitor,
+    title: "CRM Autopilots",
     desc: "High-performance systems that automate follow-ups, pipeline management, and task assignments to ensure no lead is ever left behind.",
-    features: ["Automated Nurture Flows", "Static Lead Revitalization", "Dynamic Pipeline Routing"]
-  },
-  {
-    icon: Mail,
-    title: "Lead Gen Systems",
-    desc: "AI-powered lead capture and qualification architectures designed to flood your calendar with high-intent, qualified buyers.",
-    features: ["Intelligent Lead Routing", "Behavioral Qualification", "Automated Prospect Vetting"]
-  },
-  {
-    icon: Globe,
-    title: "WhatsApp & Email Automation",
-    desc: "Hyper-responsive communication systems for automated follow-ups, appointment reminders, and scalable nurture campaigns.",
-    features: ["WhatsApp Business API", "Personalized Email Sequences", "Multi-channel Engagement"]
-  },
-  {
-    icon: UserPlus,
-    title: "Client Onboarding",
-    desc: "Smooth, automated onboarding workflows that handle document collection, forms, and client setups with zero manual intervention.",
-    features: ["Automated Document Collection", "Onboarding Logic Flow", "Seamless CRM Handover"]
-  },
-  {
-    icon: Layers,
-    title: "Custom AI Systems",
-    desc: "Bespoke AI automation ecosystems tailored to solve the specific bottlenecks holding your company back from exponential scaling.",
-    features: ["Internal AI Business Tools", "Custom API Integrations", "Private Neural Architectures"]
+    metrics: "+300% Nurture • 0 Drop-offs",
+    features: ["Automated Pipeline Routing", "Behavioral Follow-up Logic", "Database Re-activation Campaigns", "Dynamic Lead Scoring", "Instant Speed-to-Lead"],
+    mockup: {
+       title: "Pipeline Status",
+       items: ["Lead: Marcus T. → Qualified", "Follow-up Sent: 2m ago", "Status: Discovery Booked"]
+    }
   }
 ];
 
 export default function Services() {
   return (
-    <div className="pt-24 sm:pt-28 pb-20 px-4 h-full">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative overflow-hidden pt-32 pb-20">
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-0 w-full h-[1000px] bg-brand-blue/5 blur-[150px] rounded-full pointer-events-none opacity-20" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header Section */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-32"
         >
-          <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-xs font-black uppercase tracking-widest mb-6"> Our Capabilities </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 italic tracking-tighter">Enterprise Grade <br /> <span className="text-white/40">AI Automation.</span></h1>
-          <p className="text-xl text-white/50 leading-relaxed font-description">
-            We build the neural infrastructure that powers the next generation of industry leaders.
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-10">
+             <Sparkles className="w-3 h-3" />
+             Infrastructure Capabilities 
+          </div>
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter leading-[0.9] uppercase">
+            Autonomous <br /> <span className="text-white/30">Business Systems.</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto">
+            We don't just build chatbots. We architect self-scaling ecosystems that remove the human ceiling from your operation.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {/* Detailed Service Sections */}
+        <div className="space-y-40">
           {services.map((s, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
+              key={s.id}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="glass-dark border border-white/5 rounded-[40px] p-8 sm:p-10 group hover:border-brand-blue/30 transition-all flex flex-col md:flex-row gap-8"
+              viewport={{ once: true, margin: "-100px" }}
+              className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-16 lg:gap-24`}
             >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-brand-blue/10 flex-shrink-0 flex items-center justify-center shadow-glow group-hover:bg-brand-blue transition-colors duration-500">
-                <s.icon className="w-8 h-8 sm:w-10 sm:h-10 text-brand-electric group-hover:text-white transition-colors" />
-              </div>
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold mb-4 italic tracking-tight">{s.title}</h3>
-                <p className="text-white/50 text-base sm:text-lg mb-8 leading-relaxed italic font-description">{s.desc}</p>
-                <div className="space-y-3">
-                   {s.features.map((f, idx) => (
-                     <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm font-bold text-white/70">
-                       <div className="w-1.5 h-1.5 rounded-full bg-brand-electric" />
-                       {f}
-                     </div>
-                   ))}
+              <div className="lg:w-1/2 space-y-10">
+                <div className="flex flex-col gap-6">
+                  <div className="w-16 h-16 rounded-[24px] bg-brand-blue flex items-center justify-center shadow-strong-glow text-white">
+                    <s.icon className="w-8 h-8" />
+                  </div>
+                  <h2 className="text-4xl sm:text-6xl font-display font-black tracking-tighter uppercase italic leading-[0.9] text-white">
+                    {s.title}
+                  </h2>
                 </div>
+                
+                <div className="space-y-6">
+                  <p className="text-xl text-white/60 font-description italic leading-relaxed border-l-2 border-brand-electric pl-8">
+                    {s.desc}
+                  </p>
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-electric px-8">
+                     Benchmark: {s.metrics}
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {s.features.map((f, idx) => (
+                    <div key={idx} className="flex items-center gap-3 p-4 glass-dark rounded-2xl border border-white/5 hover:border-brand-blue/30 transition-all group">
+                      <CheckCircle2 className="w-4 h-4 text-brand-electric group-hover:scale-125 transition-transform" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">
+                        {f}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-6">
+                   <Link to="/contact" className="inline-flex items-center gap-4 text-xs font-black uppercase tracking-[0.3em] text-brand-electric group">
+                      Deploy System <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                   </Link>
+                </div>
+              </div>
+
+              {/* Visual Mockup Side */}
+              <div className="lg:w-1/2 w-full relative">
+                 <div className="absolute inset-0 bg-brand-blue/10 blur-[100px] rounded-full animate-pulse" />
+                 <div className="relative glass-dark rounded-[48px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent overflow-hidden aspect-[4/3] sm:aspect-square flex flex-col justify-between">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+                    
+                    <div className="p-8 sm:p-12 relative z-10 flex flex-col h-full">
+                       <div className="flex justify-between items-center mb-10">
+                          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-electric">{s.mockup.title}</span>
+                          <div className="flex gap-1.5">
+                             <div className="w-2 h-2 rounded-full bg-white/20" />
+                             <div className="w-2 h-2 rounded-full bg-white/20" />
+                             <div className="w-2 h-2 rounded-full bg-brand-electric animate-pulse" />
+                          </div>
+                       </div>
+
+                       <div className="space-y-6 flex-grow">
+                          {s.mockup.items.map((item, idx) => (
+                            <motion.div 
+                              key={idx}
+                              initial={{ opacity: 0, x: -20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.2 }}
+                              className="p-6 glass rounded-2xl border border-white/5 flex items-center justify-between group cursor-default"
+                            >
+                               <div className="flex items-center gap-4">
+                                  <div className="w-2 h-2 rounded-full bg-brand-blue" />
+                                  <span className="text-sm font-bold text-white/50 group-hover:text-white transition-colors">{item}</span>
+                               </div>
+                               <ArrowRight className="w-4 h-4 text-white/10 group-hover:text-brand-electric" />
+                            </motion.div>
+                          ))}
+                       </div>
+
+                       <div className="mt-10 pt-10 border-t border-white/5 flex justify-between items-end">
+                          <div>
+                             <div className="text-2xl font-display font-black text-white italic">+142%</div>
+                             <div className="text-[8px] font-black uppercase tracking-widest text-white/30">Weekly Efficiency Gain</div>
+                          </div>
+                          <Cpu className="w-10 h-10 text-white/5" />
+                       </div>
+                    </div>
+                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-24 sm:mt-32 p-8 sm:p-16 glass-dark rounded-[48px] border border-white/10 text-center relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-blue/10 blur-[100px] pointer-events-none" />
-           <h2 className="text-3xl sm:text-5xl font-display font-bold mb-6 sm:mb-8 italic tracking-tighter">Not sure where to start?</h2>
-           <p className="text-base sm:text-lg text-white/50 mb-10 max-w-xl mx-auto font-description">Get a custom AI implementation roadmap for your business. Zero commitment, 100% value.</p>
-           <Link to="/contact" className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black shadow-glow hover:scale-105 transition-all inline-block uppercase tracking-widest text-sm">
-             Request Strategic Audit
-           </Link>
-        </div>
+        {/* Final CTA Portal */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mt-40 p-12 sm:p-24 glass-dark rounded-[60px] border border-white/10 text-center relative overflow-hidden group shadow-strong-glow"
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-brand-blue/5 blur-[120px] rounded-full pointer-events-none" />
+          
+          <div className="relative z-10 max-w-2xl mx-auto space-y-10">
+            <h2 className="text-4xl sm:text-6xl font-display font-black uppercase italic tracking-tighter leading-[0.9]">
+              Engineered <br /> <span className="text-brand-electric">To Outperform.</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-white/60 font-description italic leading-relaxed">
+              Every system is bespoke. Every outcome is calculated. Secure your slot for a strategic neural audit.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Link to="/contact" className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black text-base hover:scale-105 transition-all shadow-glow flex items-center justify-center gap-3">
+                Claim Free Audit
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link to="/pricing" className="px-10 py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-base hover:bg-white/5 transition-all">
+                View Systems Plans
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
