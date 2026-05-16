@@ -1,0 +1,6 @@
+{
+  "name": "Operlo AI",
+  "description": "Premium multi-page AI automation company website specializing in scaling businesses through intelligent workflows and AI agents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

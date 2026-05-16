@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-description: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-blue: #0070f3;
+  --color-brand-electric: #00d2ff;
+  --color-luxury-black: #050505;
+  --color-luxury-navy: #0a0b1e;
+  
+  --shadow-glow: 0 0 20px rgba(0, 112, 243, 0.3);
+  --shadow-strong-glow: 0 0 40px rgba(0, 210, 255, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-luxury-black text-white selection:bg-brand-blue/30 antialiased overflow-x-hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-2xl border border-white/5;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to right, #0070f3, #00d2ff);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 112, 243, 0.15) 0%, transparent 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
+
