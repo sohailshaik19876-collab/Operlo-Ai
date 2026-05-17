@@ -73,10 +73,10 @@ export default function Industries() {
              <Globe className="w-3 h-3" />
              Industries 
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
+          <h1 className="text-4xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9] px-2">
             Architected For <br /> <span className="text-white/30">Industry Growth.</span>
           </h1>
-          <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto px-4">
             Our AI systems are designed specifically for your industry. We deploy systems built to solve the unique friction points of your sector.
           </p>
         </motion.div>
@@ -90,8 +90,8 @@ export default function Industries() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: i * 0.1 }}
-               className="glass-dark rounded-[48px] border border-white/5 p-10 flex flex-col justify-between group hover:border-brand-blue/30 transition-all duration-500 relative overflow-hidden"
-             >
+               className="glass-dark rounded-[40px] sm:rounded-[48px] border border-white/5 p-8 sm:p-10 flex flex-col justify-between group hover:border-brand-blue/30 transition-all duration-500 relative overflow-hidden mx-2 sm:mx-0"
+              >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                 
                 <div>
@@ -135,13 +135,13 @@ export default function Industries() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32 p-12 sm:p-20 glass-dark rounded-[60px] border border-white/10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12"
+          className="mt-20 sm:mt-32 p-8 sm:p-20 glass-dark rounded-[40px] sm:rounded-[60px] border border-white/10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 mx-2 sm:mx-0"
         >
-           <div className="relative z-10 max-w-xl">
-              <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tighter uppercase italic mb-6 leading-[0.9]">
-                 Crossing The <span className="text-brand-electric italic">Growth Gap.</span>
+           <div className="relative z-10 max-w-xl text-center md:text-left">
+              <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tighter uppercase italic mb-6 leading-[0.9] px-2 sm:px-0">
+                 Crossing The <br className="sm:hidden" /> <span className="text-brand-electric italic">Growth Gap.</span>
               </h2>
-              <p className="text-lg text-white/40 font-description italic leading-relaxed">
+              <p className="text-base sm:text-lg text-white/40 font-description italic leading-relaxed px-4 sm:px-0">
                  We've built AI systems for over 12 industries. No matter your sector, the bottleneck is always manual work. We help you automate it.
               </p>
            </div>

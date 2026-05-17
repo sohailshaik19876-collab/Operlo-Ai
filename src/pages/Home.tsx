@@ -70,7 +70,7 @@ export default function Home() {
             <motion.h1 
               variants={{ hidden: { opacity: 0, y: 30, filter: "blur(10px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)" } }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase italic"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter leading-[0.9] mb-6 sm:mb-8 uppercase italic"
             >
               Scale Your <br className="hidden sm:block" />
               <span className="text-white relative inline-block">
@@ -86,18 +86,18 @@ export default function Home() {
 
             <motion.p 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="text-base sm:text-lg md:text-xl text-white/50 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed font-description italic tracking-tight font-medium"
+              className="text-sm sm:text-lg md:text-xl text-white/50 max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10 leading-relaxed font-description italic tracking-tight font-medium px-2 sm:px-0"
             >
               Automate operations, scale lead generation, and grow with zero friction. We build custom AI Voice Systems and Automated CRM Workflows for modern businesses.
             </motion.p>
 
             <motion.div 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="flex flex-col sm:flex-row flex-wrap gap-6 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start"
             >
               <Link
                 to="/contact"
-                className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-strong-glow hover:scale-110 transition-all flex items-center justify-center gap-3 group relative overflow-hidden"
+                className="px-6 py-4 sm:px-10 sm:py-5 bg-white text-brand-blue rounded-2xl font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] shadow-strong-glow hover:scale-105 transition-all flex items-center justify-center gap-3 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-brand-electric/10 translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
                 <span className="relative z-10">Book Free Strategy Call</span>
@@ -105,7 +105,7 @@ export default function Home() {
               </Link>
               <Link
                 to="/demo"
-                className="px-10 py-5 glass border border-white/10 hover:border-brand-blue/50 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all text-center hover:bg-white/5 flex items-center justify-center gap-3 group"
+                className="px-6 py-4 sm:px-10 sm:py-5 glass border border-white/10 hover:border-brand-blue/50 text-white rounded-2xl font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] transition-all text-center hover:bg-white/5 flex items-center justify-center gap-3 group"
               >
                 See How It Works
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-electric animate-pulse group-hover:scale-150 transition-transform" />
@@ -268,8 +268,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
              <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-6"> Our Capabilities </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold mb-6 tracking-tight leading-tight uppercase italic">AI systems <br className="hidden sm:block" /> <span className="text-brand-electric italic">built to scale your business.</span></h2>
-            <p className="text-base sm:text-lg text-white/50 leading-relaxed font-description italic">We help businesses automate operations, lead generation, and customer communication using AI systems designed for modern scaling.</p>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold mb-6 tracking-tight leading-tight uppercase italic px-2">AI systems <br className="hidden sm:block" /> <span className="text-brand-electric italic">built to scale your business.</span></h2>
+            <p className="text-sm sm:text-lg text-white/50 leading-relaxed font-description italic px-4">We help businesses automate operations, lead generation, and customer communication using AI systems designed for modern scaling.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -323,10 +323,10 @@ export default function Home() {
                 viewport={{ once: true }}
                >
                   <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-8"> Our Process </div>
-                  <h2 className="text-5xl sm:text-7xl font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase italic">
+                  <h2 className="text-4xl sm:text-7xl font-display font-black tracking-tighter leading-[0.9] mb-6 sm:mb-8 uppercase italic px-2">
                     The Operlo <br /> <span className="text-white/30">Framework.</span>
                   </h2>
-                  <p className="text-lg sm:text-xl text-white/50 font-description leading-relaxed italic border-l-2 border-brand-electric pl-8">
+                  <p className="text-base sm:text-xl text-white/50 font-description leading-relaxed italic border-l-2 border-brand-electric pl-6 sm:pl-8 mx-4 sm:mx-0">
                     We automate your operations, onboarding, and lead generation to build a system that works for you.
                   </p>
                </motion.div>
@@ -360,8 +360,8 @@ export default function Home() {
 
             <div className="relative group">
                <div className="absolute inset-0 bg-brand-blue/10 blur-[100px] rounded-full animate-pulse group-hover:bg-brand-electric/10 transition-colors duration-1000" />
-               <div className="relative aspect-square glass-dark rounded-[60px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent shadow-2xl group-hover:border-brand-blue/40 transition-all duration-700">
-                  <div className="w-full h-full glass-dark rounded-[58px] p-8 sm:p-12 flex flex-col items-center justify-center relative overflow-hidden">
+               <div className="relative aspect-square glass-dark rounded-[40px] sm:rounded-[60px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent shadow-2xl group-hover:border-brand-blue/40 transition-all duration-700">
+                  <div className="w-full h-full glass-dark rounded-[38px] sm:rounded-[58px] p-6 sm:p-12 flex flex-col items-center justify-center relative overflow-hidden">
                      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
                      
                      {/* Floating Particles in UI */}
@@ -722,11 +722,11 @@ export default function Home() {
                </h2>
                <p className="text-base sm:text-lg text-white/80 mb-8 italic leading-relaxed font-description">Save time, automate repetitive work, and scale faster with custom AI automation systems.</p>
                
-               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact" className="px-8 py-4 sm:px-10 sm:py-5 bg-white text-brand-blue rounded-2xl font-black text-base sm:text-lg hover:scale-105 transition-all shadow-2xl duration-500">
+               <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
+                  <Link to="/contact" className="px-6 py-4 sm:px-10 sm:py-5 bg-white text-brand-blue rounded-2xl font-black text-sm sm:text-base hover:scale-105 transition-all shadow-2xl duration-500">
                     Book Free Strategy Call
                   </Link>
-                  <Link to="/pricing" className="px-8 py-4 sm:px-10 sm:py-5 glass rounded-2xl font-black text-base sm:text-lg hover:bg-white text-white hover:text-brand-blue hover:scale-105 transition-all duration-500 text-center">
+                  <Link to="/pricing" className="px-6 py-4 sm:px-10 sm:py-5 glass rounded-2xl font-black text-sm sm:text-base hover:bg-white text-white hover:text-brand-blue hover:scale-105 transition-all duration-500 text-center">
                     View Systems Plans
                   </Link>
                </div>
@@ -734,14 +734,7 @@ export default function Home() {
          </motion.div>
       </section>
 
-      {/* Sticky Mobile CTA */}
-      <div className="lg:hidden fixed bottom-6 left-6 right-6 z-[80]">
-         <Link to="/contact" className="w-full h-16 bg-brand-blue rounded-2xl flex items-center justify-center gap-3 font-bold shadow-strong-glow active:scale-95 transition-transform text-white border border-white/20">
-            <Zap className="w-5 h-5 fill-current" />
-            <span className="uppercase text-xs tracking-widest font-black">Book Your Strategy Call</span>
-            <ArrowRight className="w-4 h-4" />
-         </Link>
-      </div>
+      {/* Sticky Mobile CTA - REMOVED per user request to avoid overlap with chatbot */}
     </div>
   );
 }

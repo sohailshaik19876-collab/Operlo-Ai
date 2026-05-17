@@ -46,10 +46,10 @@ export default function Pricing() {
             <Zap className="w-3 h-3" />
             ROI Engineered Pricing 
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
+          <h1 className="text-4xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9] px-2">
             Invest In <br /> <span className="text-white/30">Growth.</span>
           </h1>
-          <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-xl mx-auto">
+          <p className="text-base sm:text-xl text-white/50 leading-relaxed font-description italic max-w-xl mx-auto px-4">
             Our systems don't cost money—they buy you back your time and scale your performance exponentially.
           </p>
         </motion.div>
@@ -115,18 +115,20 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="mt-20 p-8 glass-dark rounded-[40px] border border-white/5 flex flex-col md:flex-row items-center justify-between gap-10"
         >
-          <div className="flex items-center gap-6">
-            <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center">
-              <Building2 className="w-8 h-8 text-brand-electric" />
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center flex-shrink-0">
+                <Building2 className="w-8 h-8 text-brand-electric" />
+              </div>
+              <div>
+                <h4 className="text-xl font-display font-black tracking-tighter uppercase italic text-white leading-tight">Need a Multi-Entity Solution?</h4>
+                <p className="text-sm text-white/40 font-description italic mt-1">We engineer complex systems for agencies and holding companies.</p>
+              </div>
             </div>
-            <div>
-              <h4 className="text-xl font-display font-black tracking-tighter uppercase italic text-white">Need a Multi-Entity Solution?</h4>
-              <p className="text-sm text-white/40 font-description italic">We engineer complex systems for agencies and holding companies.</p>
-            </div>
+            <Link to="/contact" className="w-full sm:w-auto px-8 py-4 sm:px-10 sm:py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] transition-all text-center">
+              Contact Our Team 
+            </Link>
           </div>
-          <Link to="/contact" className="px-10 py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all">
-            Contact Our Team 
-          </Link>
         </motion.div>
       </div>
     </div>

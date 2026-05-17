@@ -54,7 +54,6 @@ export default function Navbar() {
             <span className="text-xl sm:text-2xl font-display font-black tracking-tighter text-white uppercase italic leading-[0.8]">
               OPERLO<span className="text-brand-electric">.</span>
             </span>
-            <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/30 group-hover:text-brand-electric transition-colors">Neural Systems</span>
           </div>
         </Link>
 

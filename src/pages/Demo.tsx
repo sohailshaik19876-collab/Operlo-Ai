@@ -66,19 +66,19 @@ export default function Demo() {
             </h1>
           </div>
           
-          <div className="flex glass rounded-2xl border border-white/5 p-1">
+          <div className="flex flex-wrap lg:flex-nowrap glass rounded-2xl border border-white/5 p-1 gap-1">
             {modules.map((m) => (
               <button
                 key={m.id}
                 onClick={() => setActiveModule(m.id as any)}
                 className={cn(
-                  "px-8 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all duration-500 flex items-center gap-3",
+                  "flex-1 min-w-[100px] px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-black text-[9px] sm:text-[10px] uppercase tracking-widest transition-all duration-500 flex items-center justify-center gap-2 sm:gap-3",
                   activeModule === m.id 
                     ? "bg-brand-blue text-white shadow-strong-glow" 
                     : "text-white/30 hover:text-white"
                 )}
               >
-                <m.icon className="w-4 h-4" />
+                <m.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 {m.label}
               </button>
             ))}
@@ -87,10 +87,10 @@ export default function Demo() {
 
         {/* main interactive terminal shell */}
         <div className="grid lg:grid-cols-[1fr_350px] gap-8">
-           <div className="glass-dark rounded-[48px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden group shadow-2xl min-h-[600px]">
+           <div className="glass-dark rounded-[40px] sm:rounded-[48px] border border-white/10 p-0.5 sm:p-1 bg-gradient-to-br from-white/10 to-transparent relative overflow-hidden group shadow-2xl min-h-[500px] sm:min-h-[600px]">
               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:40px_40px]" />
               
-              <div className="relative h-full bg-luxury-black/40 rounded-[46px] p-10 flex flex-col">
+              <div className="relative h-full bg-luxury-black/40 rounded-[38px] sm:rounded-[46px] p-6 sm:p-10 flex flex-col">
                  <AnimatePresence mode="wait">
                     {activeModule === "voice" && (
                       <motion.div 

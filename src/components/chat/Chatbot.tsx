@@ -20,7 +20,7 @@ export default function Chatbot() {
     {
       id: "1",
       type: "bot",
-      text: "Hi, I'm the Operlo AI assistant. I can help you explore automation solutions for your business. To start, may I know your name?",
+      text: "Welcome to Operlo AI. Let's explore how AI automation can help streamline your business. To start, may I know your name?",
       action: "name",
     },
   ]);
@@ -77,14 +77,14 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-[100]">
+    <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-[100] pb-[env(safe-area-inset-bottom)] pr-[env(safe-area-inset-right)]">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 30 }}
-            className="w-[calc(100vw-2rem)] sm:w-[380px] h-[580px] sm:h-[580px] glass-dark rounded-[32px] shadow-strong-glow flex flex-col mb-4 overflow-hidden border border-white/10"
+            className="w-[calc(100vw-2rem)] sm:w-[380px] h-[500px] sm:h-[580px] glass-dark rounded-[32px] shadow-strong-glow flex flex-col mb-4 overflow-hidden border border-white/10"
           >
             {/* Header */}
             <div className="p-6 bg-brand-blue/10 border-b border-white/5 flex items-center justify-between">
@@ -183,17 +183,20 @@ export default function Chatbot() {
                  </button>
                  <button 
                   onClick={() => handleSend("Learn More")}
-                  className="w-full py-3 glass rounded-xl font-black text-[10px] uppercase tracking-[0.2em] opacity-60 hover:opacity-100 transition-opacity"
+                  className="w-full py-3 glass rounded-xl font-black text-[10px] uppercase tracking-[0.2em] opacity-60 hover:opacity-100 transition-opacity mb-4"
                  >
                    Continue Inquiry
                  </button>
+                 <div className="flex justify-center">
+                   <a href="/privacy" className="text-[8px] font-black uppercase tracking-[0.2em] text-white/20 hover:text-brand-electric transition-colors">Privacy Policy & Data Security</a>
+                 </div>
               </div>
             )}
 
             {/* Footer Input */}
             {flowStep < 3 && (
               <div className="p-5 bg-luxury-black/50 border-t border-white/5 backdrop-blur-2xl">
-                <div className="flex gap-3 relative">
+                <div className="flex gap-3 relative mb-3">
                   <input
                     type="text"
                     value={inputValue}
@@ -212,6 +215,9 @@ export default function Chatbot() {
                   >
                     <Send className="w-3.5 h-3.5 text-white" />
                   </button>
+                </div>
+                <div className="flex justify-center">
+                  <a href="/privacy" className="text-[8px] font-black uppercase tracking-[0.2em] text-white/20 hover:text-brand-electric transition-colors">Privacy Policy & Data Security</a>
                 </div>
               </div>
             )}

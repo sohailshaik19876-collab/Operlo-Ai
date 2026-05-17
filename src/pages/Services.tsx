@@ -74,10 +74,10 @@ export default function Services() {
              <Sparkles className="w-3 h-3" />
              Our Services 
           </div>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter leading-[0.9] uppercase">
+          <h1 className="text-4xl sm:text-7xl md:text-8xl font-display font-black mb-8 sm:mb-10 italic tracking-tighter leading-[0.9] uppercase px-2">
             AI Automation <br /> <span className="text-white/30">Systems.</span>
           </h1>
-          <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto px-4">
             We build AI systems that automate your operations, lead generation, and customer communication.
           </p>
         </motion.div>
@@ -97,16 +97,16 @@ export default function Services() {
                   <div className="w-16 h-16 rounded-[24px] bg-brand-blue flex items-center justify-center shadow-strong-glow text-white">
                     <s.icon className="w-8 h-8" />
                   </div>
-                  <h2 className="text-4xl sm:text-6xl font-display font-black tracking-tighter uppercase italic leading-[0.9] text-white">
+                  <h2 className="text-3xl sm:text-6xl font-display font-black tracking-tighter uppercase italic leading-[0.9] text-white px-2">
                     {s.title}
                   </h2>
                 </div>
                 
                 <div className="space-y-6">
-                  <p className="text-xl text-white/60 font-description italic leading-relaxed border-l-2 border-brand-electric pl-8">
+                  <p className="text-base sm:text-xl text-white/60 font-description italic leading-relaxed border-l-2 border-brand-electric pl-6 sm:pl-8 mx-4 sm:mx-0">
                     {s.desc}
                   </p>
-                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-electric px-8">
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-electric px-6 sm:px-8">
                      Benchmark: {s.metrics}
                   </div>
                 </div>
@@ -132,10 +132,10 @@ export default function Services() {
               {/* Visual Mockup Side */}
               <div className="lg:w-1/2 w-full relative">
                  <div className="absolute inset-0 bg-brand-blue/10 blur-[100px] rounded-full animate-pulse" />
-                 <div className="relative glass-dark rounded-[48px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent overflow-hidden aspect-[4/3] sm:aspect-square flex flex-col justify-between">
+                 <div className="relative glass-dark rounded-[40px] sm:rounded-[48px] border border-white/10 p-1 bg-gradient-to-br from-white/10 to-transparent overflow-hidden aspect-[4/3] sm:aspect-square flex flex-col justify-between mx-4 sm:mx-0">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
                     
-                    <div className="p-8 sm:p-12 relative z-10 flex flex-col h-full">
+                    <div className="p-6 sm:p-12 relative z-10 flex flex-col h-full">
                        <div className="flex justify-between items-center mb-10">
                           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-electric">{s.mockup.title}</span>
                           <div className="flex gap-1.5">
@@ -182,24 +182,24 @@ export default function Services() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-40 p-12 sm:p-24 glass-dark rounded-[60px] border border-white/10 text-center relative overflow-hidden group shadow-strong-glow"
+          className="mt-20 sm:mt-40 p-8 sm:p-24 glass-dark rounded-[40px] sm:rounded-[60px] border border-white/10 text-center relative overflow-hidden group shadow-strong-glow mx-4 sm:mx-0"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-brand-blue/5 blur-[120px] rounded-full pointer-events-none" />
           
           <div className="relative z-10 max-w-2xl mx-auto space-y-10">
-            <h2 className="text-4xl sm:text-6xl font-display font-black uppercase italic tracking-tighter leading-[0.9]">
+            <h2 className="text-3xl sm:text-6xl font-display font-black uppercase italic tracking-tighter leading-[0.9] px-2">
               Built <br /> <span className="text-brand-electric">To Scale.</span>
             </h2>
-            <p className="text-lg sm:text-xl text-white/60 font-description italic leading-relaxed">
+            <p className="text-base sm:text-xl text-white/60 font-description italic leading-relaxed">
               We build custom AI systems to save you time and help you scale. Book your free strategy call today.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Link to="/contact" className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black text-base hover:scale-105 transition-all shadow-glow flex items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4 sm:px-0">
+              <Link to="/contact" className="px-6 py-4 sm:px-10 sm:py-5 bg-white text-brand-blue rounded-2xl font-black text-sm sm:text-base hover:scale-105 transition-all shadow-glow flex items-center justify-center gap-3">
                 Book Free Strategy Call
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link to="/pricing" className="px-10 py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-base hover:bg-white/5 transition-all">
+              <Link to="/pricing" className="px-6 py-4 sm:px-10 sm:py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-sm sm:text-base hover:bg-white/5 transition-all">
                 View Systems Plans
               </Link>
             </div>
