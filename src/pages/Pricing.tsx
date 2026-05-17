@@ -6,27 +6,27 @@ import { cn } from "../lib/utils";
 export default function Pricing() {
   const plans = [
     {
-      name: "Starter Protocol",
+      name: "Starter Plan",
       price: "$2,997",
-      desc: "Perfect for high-growth teams deploying their first neural automation node.",
-      features: ["1 Custom AI Workflow", "Core CRM Integration", "Basic Lead Qualification", "Neural System Monitoring", "Monthly Implementation Review"],
-      cta: "Initialize Setup",
+      desc: "Perfect for high-growth teams deploying their first AI automation system.",
+      features: ["1 Custom AI Workflow", "Core CRM Integration", "Basic Lead Qualification", "AI System Monitoring", "Monthly Implementation Review"],
+      cta: "Get Started",
       highlight: false
     },
     {
       name: "Growth Engine",
       price: "$5,497",
-      desc: "Mission-critical AI infrastructure for businesses scaling to the next tier.",
-      features: ["Full Service Ecosystem", "Voice & Chat Integration", "Adv. Lead Gen Architectures", "Priority 24/7 Neural Support", "Bi-Weekly Strategy Audits", "Custom Logic Hookups"],
+      desc: "Full-scale AI automation for businesses scaling to the next tier.",
+      features: ["Full Service Ecosystem", "Voice & Chat Integration", "Advanced Lead Generation", "Priority 24/7 AI Support", "Bi-Weekly Strategy Audits", "Custom Systems"],
       cta: "Scale Now",
       highlight: true
     },
     {
       name: "Enterprise Core",
       price: "Custom",
-      desc: "Bespoke neural architectures engineered for complex global operations.",
-      features: ["Unlimited Neural Agents", "Private LLM Training", "White-Glove Architecture", "Dedicated AI Director", "Custom Security Protocols", "Legacy Bridge Engineering"],
-      cta: "Request Briefing",
+      desc: "Custom AI systems built for complex business operations.",
+      features: ["Unlimited AI Agents", "Private LLM Training", "White-Glove Service", "Dedicated AI Director", "Custom Security Protocols", "Legacy Bridge Engineering"],
+      cta: "Contact Us",
       highlight: false
     }
   ];
@@ -47,7 +47,7 @@ export default function Pricing() {
             ROI Engineered Pricing 
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
-            Invest In <br /> <span className="text-white/30">Infrastructure.</span>
+            Invest In <br /> <span className="text-white/30">Growth.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-xl mx-auto">
             Our systems don't cost money—they buy you back your time and scale your performance exponentially.
@@ -125,7 +125,7 @@ export default function Pricing() {
             </div>
           </div>
           <Link to="/contact" className="px-10 py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all">
-            Inquire Strategic Partnership
+            Contact Our Team 
           </Link>
         </motion.div>
       </div>

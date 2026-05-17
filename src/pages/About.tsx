@@ -7,8 +7,8 @@ import {
 
 const stats = [
   { label: "Systems Live", value: "500+" },
-  { label: "Neural Experts", value: "45+" },
-  { label: "Hours Salvaged", value: "1.2M+" },
+  { label: "AI Experts", value: "45+" },
+  { label: "Hours Saved", value: "1.2M+" },
   { label: "ROI Delivered", value: "$12M+" },
 ];
 
@@ -28,13 +28,13 @@ export default function About() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.4em] mb-10">
              <Shield className="w-3 h-3" />
-             The Operlo Integrity
+             Our Mission
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
             Beyond The <br /> <span className="text-white/30 italic">Commonplace.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-3xl mx-auto">
-            We don't build features. We build the <span className="text-white">autonomous neural infrastructure</span> that allows enterprises to scale without the friction of legacy manual operations.
+            We don't build features. We build the <span className="text-white">custom AI automation systems</span> that allow businesses to scale without the friction of manual operations.
           </p>
         </motion.div>
 
@@ -48,17 +48,17 @@ export default function About() {
            >
               <div className="space-y-6">
                  <h2 className="text-4xl sm:text-6xl font-display font-black tracking-tighter uppercase italic leading-[1] text-white">
-                    Architecting <br /> <span className="text-brand-electric">Total Autonomy.</span>
+                    Architecting <br /> <span className="text-brand-electric">Total Efficiency.</span>
                   </h2>
                   <p className="text-lg text-white/40 font-description italic leading-relaxed">
-                    Operlo AI was founded on a singular premise: human intelligence is too valuable to spend on repetitive logic. We bridge the gap between traditional SaaS and truly autonomous business systems.
+                    Operlo AI was founded on a simple goal: human intelligence is too valuable to spend on repetitive tasks. We bridge the gap between manual operations and fully automated business systems.
                   </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                  {[
-                   { icon: Cpu, title: "Neural Core", desc: "Enterprise-grade LLM orchestration." },
-                   { icon: Network, title: "Edge Sync", desc: "Real-time ecosystem connectivity." }
+                   { icon: Cpu, title: "AI Core", desc: "Custom AI workflow orchestration." },
+                   { icon: Network, title: "System Sync", desc: "Real-time ecosystem connectivity." }
                  ].map((item, i) => (
                    <div key={i} className="p-8 glass-dark rounded-[40px] border border-white/5 bg-gradient-to-br from-white/5 to-transparent hover:border-brand-blue/30 transition-all group">
                       <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-6 group-hover:bg-brand-blue transition-colors">
@@ -98,15 +98,15 @@ export default function About() {
            {[
              { 
                icon: Target, 
-               title: "The Ultimate Goal", 
-               sub: "Zero Manual Friction", 
-               desc: "We envision a future where business scale is limited only by mission ambition, not by operational overhead. Our mission is to delete the 'scale tax' that kills growth." 
+               title: "Our Mission", 
+               sub: "Zero Manual Work", 
+               desc: "We envision a future where business scale is limited only by ambition, not by operational overhead. Our mission is to remove the obstacles that slow down growth." 
              },
              { 
                icon: Server, 
-               title: "Strategic Blueprint", 
-               sub: "The neural Standard", 
-               desc: "We are establishing the global standard for autonomous business operations. Every system we deploy is architected for redundancy, security, and infinite modularity." 
+               title: "Our Vision", 
+               sub: "The Automation Standard", 
+               desc: "We are establishing the global standard for automated business operations. Every system we build is designed for security, reliability, and infinite scaling." 
              }
            ].map((item, i) => (
              <motion.div

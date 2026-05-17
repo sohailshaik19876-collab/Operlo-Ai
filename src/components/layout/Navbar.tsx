@@ -138,9 +138,26 @@ export default function Navbar() {
                   to="/contact"
                   className="w-full py-5 bg-brand-blue rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 shadow-strong-glow active:scale-95 transition-transform"
                 >
-                  Book Your Audit
+                  Book Strategy Call
                   <ArrowRight className="w-5 h-5 text-brand-electric" />
                 </Link>
+
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  {[
+                    { name: "Privacy", href: "/privacy" },
+                    { name: "Terms", href: "/terms" },
+                    { name: "Cookies", href: "/cookies" },
+                    { name: "About", href: "/about" }
+                  ].map((item) => (
+                    <Link 
+                      key={item.name} 
+                      to={item.href}
+                      className="text-[10px] font-black uppercase tracking-widest text-white/20 hover:text-brand-electric transition-colors py-2"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

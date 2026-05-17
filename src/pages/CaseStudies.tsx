@@ -49,13 +49,13 @@ export default function CaseStudies() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.4em] mb-10">
              <Activity className="w-3 h-3" />
-             Verified Success Metrics 
+             Case Studies 
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
             The Impact <br /> <span className="text-white/30 italic">Quantified.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto">
-            We don't deal in promises. We deal in hard metrics, autonomous systems, and measurable revenue growth.
+            We don't deal in promises. We deal in hard metrics, AI automation, and measurable revenue growth.
           </p>
         </motion.div>
 
@@ -141,7 +141,7 @@ export default function CaseStudies() {
                                </div>
                             </div>
                             <div className="p-4 bg-white/5 rounded-xl border border-white/5 italic text-[10px] text-white/30">
-                               Neural system synchronized. Protocol {cs.id} operational.
+                               AI system active. Protocol {cs.id} operational.
                             </div>
                          </div>
 
@@ -173,13 +173,13 @@ export default function CaseStudies() {
           className="mt-40 text-center space-y-10"
         >
            <h2 className="text-4xl sm:text-6xl font-display font-black tracking-tighter uppercase italic leading-[0.9]">
-              Ready For Your <br /> <span className="text-brand-electric italic">Outcome Diagnostic?</span>
+              Ready For Your <br /> <span className="text-brand-electric italic">Strategy Call?</span>
            </h2>
            <button 
              onClick={() => window.location.href = "/contact"}
              className="px-12 py-6 bg-brand-blue text-white rounded-3xl font-black text-lg uppercase tracking-widest shadow-strong-glow hover:scale-105 transition-all"
             >
-               Book Free Outcome Briefing
+               Book Free Strategy Call
             </button>
             <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">Zero initial overhead. Risk-adjusted implementation.</p>
         </motion.div>

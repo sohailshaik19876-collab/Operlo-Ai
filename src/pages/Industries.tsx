@@ -71,13 +71,13 @@ export default function Industries() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-10">
              <Globe className="w-3 h-3" />
-             Sector Specialization 
+             Industries 
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
-            Architected For <br /> <span className="text-white/30">Vertical Scale.</span>
+            Architected For <br /> <span className="text-white/30">Industry Growth.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto">
-            Our neural systems are industry-aware. We deploy architectures specifically engineered for the unique friction points of your sector.
+            Our AI systems are designed specifically for your industry. We deploy systems built to solve the unique friction points of your sector.
           </p>
         </motion.div>
 
@@ -109,11 +109,11 @@ export default function Industries() {
                    
                    <div className="space-y-6 mb-12">
                       <div className="space-y-2">
-                         <div className="text-[10px] font-black uppercase tracking-widest text-white/20">The Friction</div>
+                         <div className="text-[10px] font-black uppercase tracking-widest text-white/20">The Problem</div>
                          <p className="text-sm text-white/50 font-description italic leading-relaxed">{ind.pain}</p>
                       </div>
                       <div className="space-y-2">
-                         <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric">The Engine</div>
+                         <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric">The Solution</div>
                          <p className="text-sm text-white/80 font-description italic leading-relaxed">{ind.gain}</p>
                       </div>
                    </div>
@@ -123,7 +123,7 @@ export default function Industries() {
                   onClick={() => window.location.href = "/contact"}
                   className="w-full py-5 glass border border-white/10 rounded-2xl font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-3 group/btn hover:bg-white hover:text-brand-blue transition-all shadow-glow"
                 >
-                   Secure Diagnostic
+                   Book Strategy Call
                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
                 </button>
              </motion.div>
@@ -139,10 +139,10 @@ export default function Industries() {
         >
            <div className="relative z-10 max-w-xl">
               <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tighter uppercase italic mb-6 leading-[0.9]">
-                 Crossing The <span className="text-brand-electric italic">Scale Gap.</span>
+                 Crossing The <span className="text-brand-electric italic">Growth Gap.</span>
               </h2>
               <p className="text-lg text-white/40 font-description italic leading-relaxed">
-                 We've engineered neural systems across 12+ verticals. No matter your industry, the bottleneck is always operational friction. We delete it.
+                 We've built AI systems for over 12 industries. No matter your sector, the bottleneck is always manual work. We help you automate it.
               </p>
            </div>
            

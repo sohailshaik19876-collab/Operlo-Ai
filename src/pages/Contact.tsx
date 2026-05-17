@@ -43,13 +43,13 @@ export default function Contact() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.4em]">
                  <Activity className="w-3 h-3" />
-                 Diagnostic Portal 
+                 Strategy Call 
               </div>
               <h1 className="text-5xl sm:text-7xl font-display font-black mb-8 italic tracking-tighter uppercase leading-[0.9]">
-                Initiate Your <br /> <span className="text-white/30 italic">Audit Call.</span>
+                Initiate Your <br /> <span className="text-white/30 italic">Strategy Call.</span>
               </h1>
               <p className="text-xl text-white/50 leading-relaxed font-description italic max-w-xl">
-                Ready to bridge the scale gap? Deploy our neural architecture into your operation to delete manual bottlenecks forever.
+                Ready to scale your business? Deploy our automation systems into your operation to automate manual work forever.
               </p>
             </motion.div>
 
@@ -57,13 +57,13 @@ export default function Contact() {
                <div>
                   <h3 className="text-xl font-bold uppercase italic tracking-tighter mb-8 flex items-center gap-4">
                      <Target className="w-6 h-6 text-brand-electric" />
-                     The Audit Process
+                     The Strategy Process
                   </h3>
                   <div className="space-y-6">
                      {[
-                       { t: "Logic Discovery", d: "We map your current vertical friction points." },
-                       { t: "ROI Projections", d: "Hard data on bandwidth reclamation." },
-                       { t: "Custom Blueprint", d: "Direct neural system architectural plan." }
+                       { t: "1. Business Discovery", d: "We map your current manual tasks." },
+                       { t: "2. ROI Estimate", d: "Hard data on potential time savings." },
+                       { t: "3. Custom Plan", d: "Direct automation system architectural plan." }
                      ].map((item, i) => (
                        <div key={i} className="flex gap-6 group">
                           <div className="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center font-display font-black text-xs text-white/20 group-hover:text-brand-electric group-hover:border-brand-blue/30 transition-all">0{i+1}</div>
@@ -140,7 +140,7 @@ export default function Contact() {
                               </div>
                               <div className="space-y-6">
                                  <div>
-                                    <label className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-3 block">Full Legal Name</label>
+                                    <label className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-3 block">Full Name</label>
                                     <input 
                                       type="text" 
                                       placeholder="Ex: Alexander Pierce"
@@ -186,7 +186,7 @@ export default function Contact() {
                                  ))}
                               </div>
                               <div>
-                                 <label className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-3 block">Monthly Ticket Volume</label>
+                                 <label className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-3 block">Monthly Lead Volume</label>
                                  <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-brand-blue transition-all font-black text-xs uppercase tracking-widest appearance-none text-white/90">
                                     <option>Select volume...</option>
                                     <option>0 - 50 leads</option>
@@ -205,15 +205,15 @@ export default function Contact() {
                              exit={{ opacity: 0, x: -20 }}
                              className="space-y-8"
                            >
-                              <div className="space-y-2">
-                                 <h3 className="text-3xl font-display font-black tracking-tighter uppercase italic leading-none">Bottleneck <br /> <span className="text-brand-electric">Deepscan.</span></h3>
-                                 <p className="text-[10px] uppercase font-black tracking-widest text-white/20 italic">Operational friction mapping</p>
+                               <div className="space-y-2">
+                                 <h3 className="text-3xl font-display font-black tracking-tighter uppercase italic leading-none">Business <br /> <span className="text-brand-electric">Goals.</span></h3>
+                                 <p className="text-[10px] uppercase font-black tracking-widest text-white/20 italic">How can we help?</p>
                               </div>
                               <div>
-                                 <label className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-3 block">Primary Bottleneck Brief</label>
+                                 <label className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-3 block">Tell us about your manual work</label>
                                  <textarea 
                                    rows={6}
-                                   placeholder="Describe the repetitive logic kills your bandwidth..."
+                                   placeholder="Describe the repetitive work is taking up your time..."
                                    className="w-full bg-white/5 border border-white/10 rounded-3xl px-6 py-6 focus:outline-none focus:border-brand-blue transition-all font-description italic"
                                  />
                               </div>
@@ -262,14 +262,14 @@ export default function Contact() {
                             onClick={nextStep}
                             className="flex-grow py-5 bg-white text-brand-blue rounded-2xl font-black text-[10px] uppercase tracking-widest shadow-glow hover:scale-105 transition-all flex items-center justify-center gap-3"
                           >
-                             Continue Assessment <ArrowRight className="w-4 h-4" />
+                             Continue <ArrowRight className="w-4 h-4" />
                           </button>
                         ) : (
                           <button 
                             onClick={handleSubmit}
                             className="flex-grow py-5 bg-brand-blue text-white rounded-2xl font-black text-[10px] uppercase tracking-widest shadow-strong-glow hover:scale-105 transition-all flex items-center justify-center gap-3"
                           >
-                             Complete Handshake <Zap className="w-4 h-4" />
+                             Send Message <Zap className="w-4 h-4" />
                           </button>
                         )}
                      </div>

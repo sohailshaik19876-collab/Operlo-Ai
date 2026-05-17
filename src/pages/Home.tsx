@@ -64,7 +64,7 @@ export default function Home() {
                 <span className="flex h-2.5 w-2.5 rounded-full bg-brand-electric animate-ping" />
                 <span className="absolute inset-0 h-2.5 w-2.5 rounded-full bg-brand-electric opacity-75" />
               </div>
-              <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-white/80 group-hover:text-brand-electric transition-colors">Neural Integration Level 01</span>
+              <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-white/80 group-hover:text-brand-electric transition-colors">Business Automation Level 01</span>
             </motion.div>
             
             <motion.h1 
@@ -74,7 +74,7 @@ export default function Home() {
             >
               Scale Your <br className="hidden sm:block" />
               <span className="text-white relative inline-block">
-                Performance.
+                Business.
                 <motion.div 
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
@@ -88,7 +88,7 @@ export default function Home() {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
               className="text-base sm:text-lg md:text-xl text-white/50 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed font-description italic tracking-tight font-medium"
             >
-              Delete bottlenecks. Architect systems. Scale with zero resistance. We deploy mission-critical AI Voice Agents and CRM Autopilots for the modern enterprise.
+              Automate operations, scale lead generation, and grow with zero friction. We build custom AI Voice Systems and Automated CRM Workflows for modern businesses.
             </motion.p>
 
             <motion.div 
@@ -100,14 +100,14 @@ export default function Home() {
                 className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-strong-glow hover:scale-110 transition-all flex items-center justify-center gap-3 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-brand-electric/10 translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-                <span className="relative z-10">Claim Free AI Audit</span>
+                <span className="relative z-10">Book Free Strategy Call</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
               </Link>
               <Link
                 to="/demo"
                 className="px-10 py-5 glass border border-white/10 hover:border-brand-blue/50 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all text-center hover:bg-white/5 flex items-center justify-center gap-3 group"
               >
-                Inquire System Specs
+                See How It Works
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-electric animate-pulse group-hover:scale-150 transition-transform" />
               </Link>
             </motion.div>
@@ -151,7 +151,7 @@ export default function Home() {
                     <div className="flex items-center gap-4">
                        <div className="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center shadow-glow animate-pulse"><Phone className="w-6 h-6" /></div>
                        <div>
-                          <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric animate-pulse">Voice Outbound</div>
+                          <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric animate-pulse">Automated Calls</div>
                           <div className="text-sm font-bold">99.2% Connectivity</div>
                        </div>
                     </div>
@@ -169,7 +169,7 @@ export default function Home() {
                     <div className="flex items-center gap-3">
                        <div className="w-12 h-12 rounded-xl bg-brand-electric flex items-center justify-center shadow-glow text-luxury-black"><Zap className="w-6 h-6" /></div>
                        <div>
-                          <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric">Lead Sync</div>
+                          <div className="text-[10px] font-black uppercase tracking-widest text-brand-electric">Lead Automation</div>
                           <div className="text-xs font-bold">Instant Validation</div>
                        </div>
                     </div>
@@ -204,8 +204,8 @@ export default function Home() {
 
                     <div className="grid grid-cols-2 gap-6">
                        {[
-                         { label: "AI Neural Load", val: "22%", color: "#00d2ff" },
-                         { label: "Workflow Logic", val: "OPTIMAL", color: "#0070f3" }
+                         { label: "System Efficiency", val: "22%", color: "#00d2ff" },
+                         { label: "Process Health", val: "OPTIMAL", color: "#0070f3" }
                        ].map((stat, i) => (
                          <div key={i} className="p-6 glass rounded-[36px] border border-white/5 relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-16 h-16 bg-white/5 blur-2xl group-hover:bg-brand-blue/10 transition-colors" />
@@ -268,18 +268,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 px-4">
              <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-6"> Our Capabilities </div>
-            <h2 className="text-3xl sm:text-5xl font-display font-bold mb-6 tracking-tight leading-tight uppercase italic">Autonomous systems <br className="hidden sm:block" /> <span className="text-brand-electric italic">engineered to win.</span></h2>
-            <p className="text-base sm:text-lg text-white/50 leading-relaxed font-description italic">We don't just "automate". We architect intelligent neural frameworks that think, act, and scale like high-level associates.</p>
+            <h2 className="text-3xl sm:text-5xl font-display font-bold mb-6 tracking-tight leading-tight uppercase italic">AI systems <br className="hidden sm:block" /> <span className="text-brand-electric italic">built to scale your business.</span></h2>
+            <p className="text-base sm:text-lg text-white/50 leading-relaxed font-description italic">We help businesses automate operations, lead generation, and customer communication using AI systems designed for modern scaling.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { icon: Phone, title: "AI Voice Agents", desc: "Outbound & Inbound voice associates with human-grade tonality and zero response latency for 24/7 coverage." },
-              { icon: Zap, title: "Workflow Systems", desc: "Enterprise-grade operational automation that syncs data between platforms and removes human error." },
-              { icon: BarChart3, title: "CRM Automation", desc: "Automate follow-ups, lead tracking, and pipeline management to ensure every lead is nurtured to conversion." },
-              { icon: MessageSquare, title: "AI Chatbots", desc: "Intelligent systems for Web & WhatsApp that qualify leads, answer questions, and book appointments instantly." },
-              { icon: UserPlus, title: "Onboarding Flows", desc: "Smooth, automated client onboarding that handles document collection and setups with zero manual work." },
-              { icon: Layers, title: "Custom AI Ecosystems", desc: "Future-proof systems built to handle your jump from $1M to $10M+ without administrative friction." }
+              { icon: Phone, title: "AI Voice Systems", desc: "Automated phone systems that handle calls, answer questions, and qualify leads automatically with human-grade tonality." },
+              { icon: Zap, title: "Automated Workflows", desc: "Streamline your operations by automating repetitive tasks and syncing data across your tools." },
+              { icon: BarChart3, title: "Lead Automation", desc: "Ensure no lead is ever lost with automated follow-ups, lead tracking, and pipeline management." },
+              { icon: MessageSquare, title: "AI Customer Support", desc: "Automatically qualify leads and answer customer questions 24/7 on your website or WhatsApp." },
+              { icon: UserPlus, title: "Automated Onboarding", desc: "Simplify client onboarding with automated document collection and setup workflows." },
+              { icon: Layers, title: "Custom Scaling Systems", desc: "Built-to-scale systems that grow with your business from 7 to 8 figures without the overhead." }
             ].map((feature, i) => (
               <motion.div
                 key={i}
@@ -297,8 +297,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 tracking-tighter uppercase italic group-hover:text-brand-electric transition-colors">{feature.title}</h3>
                 <p className="text-base text-white/40 leading-relaxed italic font-description group-hover:text-white/60 transition-colors uppercase tracking-tight text-xs">{feature.desc}</p>
-                <Link to="/demo" className="inline-flex items-center gap-2 mt-10 text-[10px] font-black uppercase tracking-[0.3em] text-brand-electric hover:gap-5 transition-all group/link">
-                  Launch Simulation <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  <Link to="/demo" className="inline-flex items-center gap-2 mt-10 text-[10px] font-black uppercase tracking-[0.3em] text-brand-electric hover:gap-5 transition-all group/link">
+                  Get Started <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
                 
                 {/* Decorative Element */}
@@ -322,21 +322,21 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                >
-                  <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-8"> System Blueprint </div>
+                  <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-8"> Our Process </div>
                   <h2 className="text-5xl sm:text-7xl font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase italic">
-                    The Neural <br /> <span className="text-white/30">Architecture.</span>
+                    The Operlo <br /> <span className="text-white/30">Framework.</span>
                   </h2>
                   <p className="text-lg sm:text-xl text-white/50 font-description leading-relaxed italic border-l-2 border-brand-electric pl-8">
-                    We don't just "automate". We re-engineer the logic nodes of your operation to create a self-scaling ecosystem.
+                    We automate your operations, onboarding, and lead generation to build a system that works for you.
                   </p>
                </motion.div>
 
                <div className="space-y-4">
                   {[
-                    { title: "Strategic Reconnaissance", desc: "Our architects map every manual logic gate in your current workflow to identify deletion points." },
-                    { title: "Neural Engineering", desc: "Bespoke AI associates are trained on your proprietary business logic and industry data." },
-                    { title: "Deep-Stack Injection", desc: "Live deployment into your existing CRM, VoIP, and communication layers with zero downtime." },
-                    { title: "Optimization Protocol", desc: "Continuous neural refinement based on real-world interaction data to maximize ROI." }
+                    { title: "1. Operational Audit", desc: "We identify every manual task in your business that can be automated to save you time." },
+                    { title: "2. System Design", desc: "We build custom AI systems tailored to your specific business rules and customer needs." },
+                    { title: "3. Implementation", desc: "We integrate the automation directly into your CRM and tools with zero downtime." },
+                    { title: "4. Scaling & Support", desc: "We monitor and improve your systems to ensure maximum efficiency and ROI as you scale." }
                   ].map((step, i) => (
                     <motion.div 
                       key={i}
@@ -386,7 +386,7 @@ export default function Home() {
                           whileHover={{ scale: 1.05, rotateY: 5 }}
                           className="p-6 glass rounded-2xl border border-brand-blue/30 flex items-center justify-center gap-4 bg-brand-blue/10 shadow-glow relative group/node"
                         >
-                           <div className="absolute -top-2 -right-2 px-2 py-0.5 bg-brand-electric text-luxury-black text-[8px] font-black rounded-lg opacity-0 group-hover/node:opacity-100 transition-opacity">SOURCE</div>
+                           <div className="absolute -top-2 -right-2 px-2 py-0.5 bg-brand-electric text-luxury-black text-[8px] font-black rounded-lg opacity-0 group-hover/node:opacity-100 transition-opacity">INPUT</div>
                            <Bot className="w-8 h-8 text-brand-electric" />
                            <div className="h-3 w-32 bg-white/20 rounded-full overflow-hidden">
                               <motion.div 
@@ -446,7 +446,7 @@ export default function Home() {
                               className="absolute -inset-2 bg-brand-electric/10 rounded-3xl blur-xl opacity-0 group-hover/final:opacity-100 transition-opacity" 
                            />
                            <CheckCircle2 className="w-7 h-7" />
-                           <span className="text-[10px] font-black uppercase tracking-[0.3em]">Neural Output Optimized</span>
+                           <span className="text-[10px] font-black uppercase tracking-[0.3em]">Business Scaling Optimized</span>
                         </motion.div>
                      </div>
                   </div>
@@ -461,17 +461,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 space-y-12">
-               <motion.div
+                <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                >
-                  <div className="inline-block px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-8"> Interactive Blueprint </div>
+                  <div className="inline-block px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-8"> System Dashboard </div>
                   <h2 className="text-4xl sm:text-7xl font-display font-black tracking-tighter uppercase italic leading-[0.9] mb-8">
-                    Live Neural <br /> <span className="text-white/30">Orchestration.</span>
+                    Automated <br /> <span className="text-white/30">Workflows.</span>
                   </h2>
                   <p className="text-lg text-white/50 font-description italic leading-relaxed max-w-xl">
-                    Visualize how our autonomous engines sync your entire frontend and backend operations in real-time. This is not a simulation—it's architecture.
+                    See how our AI systems automate your leads, follow-ups, and communication in real-time.
                   </p>
                </motion.div>
 
@@ -479,7 +479,7 @@ export default function Home() {
                   {[
                     { label: "CRM Pipeline Sync", status: "Active", delay: "4ms" },
                     { label: "Voice Latency Engine", status: "Optimized", delay: "12ms" },
-                    { label: "Neural Lead Filter", status: "Active", delay: "0.8s" },
+                    { label: "Lead Qualification", status: "Active", delay: "0.8s" },
                     { label: "WhatsApp Gateway", status: "Connected", delay: "Instant" }
                   ].map((sys, i) => (
                     <motion.div 
@@ -585,8 +585,8 @@ export default function Home() {
       {/* Testimonials - Elite Carousel */}
       <section className="py-20 sm:py-28 px-4 relative overflow-hidden bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 mb-20 text-center">
-           <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-6"> Success Protocols </div>
-           <h2 className="text-4xl sm:text-7xl font-display font-black tracking-tighter uppercase italic leading-[0.9]">Voices Of <br /> <span className="text-brand-electric">Performance.</span></h2>
+           <div className="inline-block px-4 py-1.5 glass rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-6"> Success </div>
+           <h2 className="text-4xl sm:text-7xl font-display font-black tracking-tighter uppercase italic leading-[0.9]">Voices Of <br /> <span className="text-brand-electric">Success.</span></h2>
         </div>
 
         <div className="flex gap-8 overflow-hidden relative group">
@@ -596,15 +596,15 @@ export default function Home() {
             className="flex gap-8 whitespace-nowrap"
            >
               {[
-                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe, metrics: "2.4x Revenue" },
-                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap, metrics: "-85% Overhead" },
+                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo automated our lead follow-up. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe, metrics: "2.4x Revenue" },
+                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The automated voice systems sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap, metrics: "-85% Overhead" },
                 { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu, metrics: "100% Automated" },
-                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe, metrics: "12hr/day Saved" }
+                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The AI systems have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe, metrics: "12hr/day Saved" }
               ].concat([
-                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo deleted our lead latency. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe, metrics: "2.4x Revenue" },
-                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The AI voice agents sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap, metrics: "-85% Overhead" },
+                { name: "Marcus Thorne", role: "CEO", company: "Thrive Real Estate", quote: "Operlo automated our lead follow-up. Our response time dropped from 4 hours to 4 seconds, and our booking rate doubled in 30 days.", logo: Globe, metrics: "2.4x Revenue" },
+                { name: "Sarah Jenkins", role: "Founder", company: "Zenith Agency", quote: "The automated voice systems sound indistinguishable from my best openers. We've scaled our volume by 400% without new hires.", logo: Zap, metrics: "-85% Overhead" },
                 { name: "David Chen", role: "Ops Director", company: "Nexus Tech", quote: "Finally, an AI partner that understands business ROI, not just tech. The integration with our custom CRM was seamless.", logo: Cpu, metrics: "100% Automated" },
-                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The neural assistants have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe, metrics: "12hr/day Saved" }
+                { name: "Elena Rodriguez", role: "Growth Lead", company: "Solaris SaaS", quote: "The AI systems have completely transformed our lead qualification. We're now booking meetings on autopilot.", logo: Globe, metrics: "12hr/day Saved" }
               ]).map((t, i) => (
                 <div key={i} className="w-[350px] sm:w-[450px] flex-shrink-0 glass-dark p-10 rounded-[44px] border border-white/5 hover:border-white/20 transition-all group/card relative overflow-hidden">
                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity" />
@@ -634,7 +634,7 @@ export default function Home() {
                       <div className="flex gap-1 text-brand-electric">
                          {[1,2,3,4,5].map(star => <Sparkles key={star} className="w-3 h-3 fill-current" />)}
                       </div>
-                      <div className="text-[10px] font-black uppercase tracking-widest">Neural Verification #0{i+1}</div>
+                      <div className="text-[10px] font-black uppercase tracking-widest">Verified Partner #0{i+1}</div>
                    </div>
                 </div>
               ))}
@@ -653,19 +653,19 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-block px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-6"> Diagnostic Portal </div>
-            <h2 className="text-4xl sm:text-6xl font-display font-bold tracking-tight uppercase italic underline underline-offset-8 decoration-brand-blue/20">Common <span className="text-white/30 italic">Inquiries.</span></h2>
+            <div className="inline-block px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-6"> Common Questions </div>
+            <h2 className="text-4xl sm:text-6xl font-display font-bold tracking-tight uppercase italic underline underline-offset-8 decoration-brand-blue/20">Common <span className="text-white/30 italic">Questions.</span></h2>
           </motion.div>
 
           <div className="space-y-4 sm:space-y-6">
             {[
               { 
                 q: "Is Operlo AI just another marketing agency?", 
-                a: "No. We are an AI engineering firm. While agencies focus on traffic, we focus on autonomous infrastructure—building systems that replace manual labor and delete operational bottlenecks using neural technology." 
+                a: "No. We are an AI automation company. While agencies focus on traffic, we focus on autonomous infrastructure—building systems that automate manual tasks and help businesses scale faster." 
               },
               { 
-                q: "Can the AI Voice Agents handle inbound and outbound?", 
-                a: "Absolutely. Our neural assistants are architected to handle high-volume inbound inquiries and execute complex outbound qualification calls with human-grade tonality and zero latency." 
+                q: "Can the AI Voice Systems handle inbound and outbound?", 
+                a: "Absolutely. Our AI systems are designed to handle high-volume inbound inquiries and execute complex outbound qualification calls with human-grade tonality and zero delays." 
               },
               { 
                 q: "Which CRMs and platforms can you integrate with?", 
@@ -718,13 +718,13 @@ export default function Home() {
                   <Rocket className="w-7 h-7 sm:w-8 sm:h-8" />
                </div>
                <h2 className="text-3xl sm:text-5xl font-display font-black mb-6 italic tracking-tighter leading-[1.1] uppercase">
-                  The Door To <br className="sm:hidden" /> AI Scaling <span className="text-brand-electric underline underline-offset-8 decoration-2">Is Open.</span>
+                  The Door To <br className="sm:hidden" /> Automation <span className="text-brand-electric underline underline-offset-8 decoration-2">Is Open.</span>
                </h2>
-               <p className="text-base sm:text-lg text-white/80 mb-8 italic leading-relaxed font-description">Stop trading your precious hours for manual clicks. Let us build the autonomous systems that work while you grow.</p>
+               <p className="text-base sm:text-lg text-white/80 mb-8 italic leading-relaxed font-description">Save time, automate repetitive work, and scale faster with custom AI automation systems.</p>
                
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/contact" className="px-8 py-4 sm:px-10 sm:py-5 bg-white text-brand-blue rounded-2xl font-black text-base sm:text-lg hover:scale-105 transition-all shadow-2xl duration-500">
-                    Claim Free AI Audit
+                    Book Free Strategy Call
                   </Link>
                   <Link to="/pricing" className="px-8 py-4 sm:px-10 sm:py-5 glass rounded-2xl font-black text-base sm:text-lg hover:bg-white text-white hover:text-brand-blue hover:scale-105 transition-all duration-500 text-center">
                     View Systems Plans

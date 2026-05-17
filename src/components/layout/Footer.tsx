@@ -109,9 +109,9 @@ export default function Footer() {
           </div>
           
           <div className="flex flex-wrap justify-center gap-6 sm:gap-12 text-[10px] font-black uppercase tracking-widest text-white/30">
-            <a href="#" className="hover:text-brand-electric transition-colors">Privacy Neural Policy</a>
-            <a href="#" className="hover:text-brand-electric transition-colors">Performance Terms</a>
-            <a href="#" className="hover:text-brand-electric transition-colors">Security Cookies</a>
+            <Link to="/privacy" className="hover:text-brand-electric transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-brand-electric transition-colors">Terms of Service</Link>
+            <Link to="/cookies" className="hover:text-brand-electric transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

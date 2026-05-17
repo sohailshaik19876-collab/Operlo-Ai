@@ -10,44 +10,44 @@ const services = [
   {
     id: "voice",
     icon: Phone,
-    title: "AI Voice Associates",
-    desc: "Neural voice assistants capable of handling phone conversations, answering inquiries, and qualifying prospects with human-grade tonality.",
-    metrics: "24/7 Coverage • 0s Latency",
+    title: "AI Voice Systems",
+    desc: "Custom voice systems that handle calls, answer questions, and qualify leads automatically with human-grade tonality.",
+    metrics: "24/7 Coverage • 0s Delay",
     features: ["Inbound/Outbound Handling", "Human-Grade Tonality", "Direct CRM Call Log Sync", "Automated Appointment Setting", "Multi-language Support"],
     mockup: {
       title: "Voice Queue",
-      items: ["Incoming Call: Sarah T.", "Outgoing Sync: Lead #4521", "Analysis: Positive Intent"]
+      items: ["Incoming Call: Sarah T.", "Lead Status: Qualified", "Analysis: Positive Intent"]
     }
   },
   {
     id: "workflows",
     icon: Zap,
-    title: "Backend Orchestration",
-    desc: "End-to-end operational automation that deletes repetitive admin work and syncs mission-critical data across your entire stack.",
-    metrics: "12ms Sync • 100% Accuracy",
+    title: "Automated Workflows",
+    desc: "Automate repetitive business tasks and sync data across your tools to save hours of manual work.",
+    metrics: "Real-time Sync • 100% Accuracy",
     features: ["Cross-platform Data Sync", "Automated Document Flow", "Slack/Teams Operational Alerts", "Custom Logic Integrations", "Legacy System Bridging"],
     mockup: {
-       title: "Logic Map",
+       title: "System Map",
        items: ["If Lead > $10k → Notify CEO", "Sync HubSpot → GoHighLevel", "Generate Auto-Invoice"]
     }
   },
   {
     id: "chatbots",
     icon: MessageSquare,
-    title: "Neural Chat Systems",
-    desc: "Intelligent concierge systems for websites and WhatsApp that qualify leads, answer FAQs, and book appointments 24/7.",
-    metrics: "98% Resolution • Infinite Scale",
+    title: "AI Customer Support",
+    desc: "Automatically qualify leads and answer customer questions 24/7 on your website or WhatsApp.",
+    metrics: "98% Resolution • 24/7 Support",
     features: ["Lead Qualification Flows", "Natural Language FAQ Handling", "WhatsApp Business Deep Integration", "Visual Product Recommendations", "Live Handover Protocols"],
     mockup: {
-       title: "Live Concierge",
-       items: ["User: How do I scale?", "AI: Analyzing Systems...", "AI: Deploying Neural Node."]
+       title: "Live Support",
+       items: ["User: How do I scale?", "AI: Analyzing Business...", "AI: Automating Workflow."]
     }
   },
   {
     id: "crm",
     icon: Monitor,
-    title: "CRM Autopilots",
-    desc: "High-performance systems that automate follow-ups, pipeline management, and task assignments to ensure no lead is ever left behind.",
+    title: "CRM Automation",
+    desc: "Ensure no lead is ever lost with automated follow-ups and pipeline management across your CRM.",
     metrics: "+300% Nurture • 0 Drop-offs",
     features: ["Automated Pipeline Routing", "Behavioral Follow-up Logic", "Database Re-activation Campaigns", "Dynamic Lead Scoring", "Instant Speed-to-Lead"],
     mockup: {
@@ -72,13 +72,13 @@ export default function Services() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.3em] mb-10">
              <Sparkles className="w-3 h-3" />
-             Infrastructure Capabilities 
+             Our Services 
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter leading-[0.9] uppercase">
-            Autonomous <br /> <span className="text-white/30">Business Systems.</span>
+            AI Automation <br /> <span className="text-white/30">Systems.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto">
-            We don't just build chatbots. We architect self-scaling ecosystems that remove the human ceiling from your operation.
+            We build AI systems that automate your operations, lead generation, and customer communication.
           </p>
         </motion.div>
 
@@ -124,7 +124,7 @@ export default function Services() {
 
                 <div className="pt-6">
                    <Link to="/contact" className="inline-flex items-center gap-4 text-xs font-black uppercase tracking-[0.3em] text-brand-electric group">
-                      Deploy System <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                      Get Started <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                    </Link>
                 </div>
               </div>
@@ -189,14 +189,14 @@ export default function Services() {
           
           <div className="relative z-10 max-w-2xl mx-auto space-y-10">
             <h2 className="text-4xl sm:text-6xl font-display font-black uppercase italic tracking-tighter leading-[0.9]">
-              Engineered <br /> <span className="text-brand-electric">To Outperform.</span>
+              Built <br /> <span className="text-brand-electric">To Scale.</span>
             </h2>
             <p className="text-lg sm:text-xl text-white/60 font-description italic leading-relaxed">
-              Every system is bespoke. Every outcome is calculated. Secure your slot for a strategic neural audit.
+              We build custom AI systems to save you time and help you scale. Book your free strategy call today.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link to="/contact" className="px-10 py-5 bg-white text-brand-blue rounded-2xl font-black text-base hover:scale-105 transition-all shadow-glow flex items-center justify-center gap-3">
-                Claim Free Audit
+                Book Free Strategy Call
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link to="/pricing" className="px-10 py-5 glass border border-white/10 hover:border-brand-blue text-white rounded-2xl font-black text-base hover:bg-white/5 transition-all">

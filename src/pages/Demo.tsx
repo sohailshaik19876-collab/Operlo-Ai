@@ -35,9 +35,9 @@ export default function Demo() {
   };
 
   const modules = [
-    { id: "voice", icon: Phone, label: "Neural Voice", status: "Operational" },
-    { id: "chat", icon: MessageSquare, label: "Chat Protocol", status: "Active" },
-    { id: "workflow", icon: Server, label: "Backend Core", status: "Optimal" }
+    { id: "voice", icon: Phone, label: "AI Voice", status: "Operational" },
+    { id: "chat", icon: MessageSquare, label: "AI Support", status: "Active" },
+    { id: "workflow", icon: Server, label: "Workflows", status: "Optimal" }
   ];
 
   return (
@@ -59,10 +59,10 @@ export default function Demo() {
               className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.4em]"
             >
               <Activity className="w-3 h-3" />
-              Live System Diagnostic Center
+              Live Interactive Demo
             </motion.div>
             <h1 className="text-5xl sm:text-7xl font-display font-black tracking-tighter uppercase italic leading-[0.8] mb-0">
-              Neural <span className="text-white/30 italic">Showcase.</span>
+              AI Automation <span className="text-white/30 italic">Showcase.</span>
             </h1>
           </div>
           
@@ -102,11 +102,11 @@ export default function Demo() {
                       >
                          <div className="space-y-10">
                             <div className="space-y-4">
-                               <div className="text-[10px] font-black uppercase tracking-[0.5em] text-brand-electric">Module 01: Verbal Extraction</div>
-                               <h2 className="text-4xl sm:text-6xl font-display font-black tracking-tighter uppercase italic leading-[0.9]">Human Grade <br /> <span className="text-brand-electric">Voice.</span></h2>
+                               <div className="text-[10px] font-black uppercase tracking-[0.5em] text-brand-electric">Module 01: AI Voice</div>
+                               <h2 className="text-4xl sm:text-6xl font-display font-black tracking-tighter uppercase italic leading-[0.9]">Human-Like AI <br /> <span className="text-brand-electric">Voice.</span></h2>
                             </div>
                             <p className="text-lg text-white/50 font-description italic leading-relaxed">
-                               Experience zero-latency neural voice synthesis. Capable of complex objection handling and real-time database syncing during live calls.
+                               Experience crystal clear AI voice systems. Capable of handling complex customer questions and syncing data in real-time.
                             </p>
                             <div className="grid grid-cols-2 gap-4">
                                {[
@@ -126,7 +126,7 @@ export default function Demo() {
                               disabled={isAnalyzing}
                               className="w-full py-5 bg-white text-brand-blue rounded-2xl font-black text-xs uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:scale-105 transition-all shadow-glow active:scale-95 disabled:opacity-50"
                             >
-                               {isAnalyzing ? `Analyzing Pipeline ${progress}%` : "Run Performance Test"}
+                               {isAnalyzing ? `Running Demo ${progress}%` : "Run Demo Test"}
                                <Play className={cn("w-4 h-4 fill-current", isAnalyzing && "animate-spin")} />
                             </button>
                          </div>
@@ -162,7 +162,7 @@ export default function Demo() {
                               transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
                               className="absolute inset-0"
                             >
-                               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 px-3 py-1 glass rounded-lg border border-brand-electric/50 text-[8px] font-black uppercase text-brand-electric">Tonality: Calm</div>
+                               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 px-3 py-1 glass rounded-lg border border-brand-electric/50 text-[8px] font-black uppercase text-brand-electric">Tone: Professional</div>
                             </motion.div>
                          </div>
                       </motion.div>
@@ -178,8 +178,8 @@ export default function Demo() {
                        >
                           <div className="flex justify-between items-center mb-10 pb-8 border-b border-white/5">
                              <div className="space-y-1">
-                                <h3 className="text-2xl font-display font-black uppercase italic tracking-tighter">Neural Chat Prototype</h3>
-                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Module 02: Conversational Architect</p>
+                                <h3 className="text-2xl font-display font-black uppercase italic tracking-tighter">AI Support Demo</h3>
+                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Module 02: Automated Conversation</p>
                              </div>
                              <div className="flex gap-4">
                                 <div className="px-4 py-2 glass rounded-xl border border-white/5 flex items-center gap-2">
@@ -192,7 +192,7 @@ export default function Demo() {
                           <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-12">
                              <div className="space-y-8">
                                 <p className="text-lg text-white/50 font-description italic leading-relaxed">
-                                   Our chatbots operate as mission-critical concierge systems, qualified to handle entire customer onboarding and lead vetting sequences autonomously.
+                                   Our chatbots operate as custom 24/7 support systems, designed to handle entire customer onboarding and lead vetting sequences.
                                 </p>
                                 <div className="space-y-4">
                                    {["Intelligent Intent Detection", "CRM Webhook Integration", "Knowledge Base Retrieval", "Appointment Locking"].map((f, i) => (
@@ -245,15 +245,15 @@ export default function Demo() {
                         className="h-full flex flex-col"
                        >
                           <div className="text-center max-w-2xl mx-auto mb-16">
-                             <h2 className="text-4xl sm:text-6xl font-display font-black uppercase italic tracking-tighter mb-4 leading-none">Neural <span className="text-brand-electric">Fabric.</span></h2>
-                             <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Module 03: Operational Infrastructure</p>
+                             <h2 className="text-4xl sm:text-6xl font-display font-black uppercase italic tracking-tighter mb-4 leading-none">Automated <span className="text-brand-electric">Infrastructure.</span></h2>
+                             <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">Module 03: System Workflows</p>
                           </div>
 
                           <div className="grid md:grid-cols-3 gap-8 flex-grow">
                              {[
-                               { label: "Trigger Node", sub: "Incoming Lead", icon: Zap, status: "Listening" },
-                               { label: "Intelligence Node", sub: "Logic Filter", icon: Cpu, status: "Active" },
-                               { label: "Action Node", sub: "CRM Execution", icon: Database, status: "Ready" }
+                               { label: "1. Trigger", sub: "New Lead", icon: Zap, status: "Listening" },
+                               { label: "2. Process", sub: "AI Qualification", icon: Cpu, status: "Active" },
+                               { label: "3. Action", sub: "CRM Update", icon: Database, status: "Ready" }
                              ].map((node, i) => (
                                <div key={i} className="relative group">
                                   <div className="p-8 glass-dark rounded-[40px] border border-white/5 hover:border-brand-blue/30 transition-all text-center h-full flex flex-col justify-between">
@@ -298,7 +298,7 @@ export default function Demo() {
               <div className="glass-dark rounded-[40px] border border-white/10 p-8 space-y-8 box-hover bg-brand-blue/5">
                  <div className="flex items-center gap-3 border-b border-white/5 pb-6">
                     <Shield className="w-5 h-5 text-brand-electric" />
-                    <span className="text-xs font-black uppercase tracking-widest">Protocol Guard</span>
+                    <span className="text-xs font-black uppercase tracking-widest">System Security</span>
                  </div>
                  <div className="space-y-6">
                     {[
@@ -318,11 +318,11 @@ export default function Demo() {
                  <div className="relative z-10">
                     <div className="flex items-center gap-3 border-b border-white/5 pb-6 mb-6">
                        <Terminal className="w-5 h-5 text-brand-electric" />
-                       <span className="text-xs font-black uppercase tracking-widest">Audit Console</span>
+                       <span className="text-xs font-black uppercase tracking-widest">System Log</span>
                     </div>
                     <div className="space-y-4 font-mono text-[10px] text-white/40 leading-relaxed italic">
                        <p className="text-brand-electric">[{new Date().toLocaleTimeString()}] System handshake success.</p>
-                       <p>&gt; Initializing neural deep-scan...</p>
+                       <p>&gt; Initializing lead scan...</p>
                        <p>&gt; Mapping cross-entity dependencies...</p>
                        <p className="text-green-500">&gt; Optimal pathways calculated.</p>
                        <p>&gt; Ready for deployment.</p>

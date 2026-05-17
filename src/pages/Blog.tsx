@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const posts = [
   {
-    title: "How AI Voice Agents are Destroying Inbound Lead Latency",
+    title: "How AI Voice Systems are Improving Lead Response Times",
     excerpt: "Discover why immediate response is the only metric that matters in 2026 real estate and high-ticket sales.",
     category: "Insights",
     date: "May 12, 2026",
@@ -14,7 +14,7 @@ const posts = [
   },
   {
     title: "The Ultimate Guide to CRM Automation for Modern Agencies",
-    excerpt: "Stop manually updating cards. Automate your entire pipeline with these simple neural triggers and webhooks.",
+    excerpt: "Stop manually updating cards. Automate your entire pipeline with these simple automation triggers and webhooks.",
     category: "Guides",
     date: "May 08, 2026",
     readingTime: "8 min read",
@@ -23,7 +23,7 @@ const posts = [
   },
   {
     title: "Why Your Business Needs a Custom LLM Knowledge Base",
-    excerpt: "Internal AI is more than just a simple chatbot. It is the proprietary neural brain of your entire company.",
+    excerpt: "Internal AI is more than just a simple chatbot. It is the proprietary knowledge center of your entire company.",
     category: "Technical",
     date: "May 05, 2026",
     readingTime: "12 min read",
@@ -47,13 +47,13 @@ export default function Blog() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-brand-blue/10 rounded-full text-brand-electric text-[10px] font-black uppercase tracking-[0.4em] mb-10">
              <Activity className="w-3 h-3" />
-             Intelligence Distribution
+             Business Insights
           </div>
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-display font-black mb-10 italic tracking-tighter uppercase leading-[0.9]">
-            The Neural <br /> <span className="text-white/30 italic">Logbooks.</span>
+            The Operlo <br /> <span className="text-white/30 italic">Blog.</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/50 leading-relaxed font-description italic max-w-2xl mx-auto">
-            Operational intelligence, engineering breakthroughs, and systemic scaling blueprints.
+            Business automation, engineering breakthroughs, and systemic scaling blueprints.
           </p>
         </motion.div>
 
